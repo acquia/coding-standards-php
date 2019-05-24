@@ -1,0 +1,38 @@
+{
+    "name": "acquia/coding-standards",
+    "type": "phpcodesniffer-standard",
+    "description": "PHP_CodeSniffer rules (sniffs) for Acquia coding standards",
+    "keywords": [
+        "Drupal",
+        "phpcs",
+        "standards"
+    ],
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Acquia Engineering",
+            "homepage": "https://www.acquia.com",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {},
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Acquia\\DrupalCodingStandards\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/acquia/coding-standards/issues",
+        "source": "https://github.com/acquia/coding-standards"
+    }
+}
