@@ -15,7 +15,12 @@
             "role": "Maintainer"
         }
     ],
-    "require": {},
+    "require": {
+        "drupal/coder": "^8.3",
+        "pheromone/phpcs-security-audit": "^2.0",
+        "phpcompatibility/php-compatibility": "^9.0",
+        "squizlabs/php_codesniffer": "^3"
+    },
     "config": {
         "sort-packages": true
     },
