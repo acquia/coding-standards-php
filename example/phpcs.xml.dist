@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<ruleset name="Example">
+
+  <description>An example PHP CodeSniffer configuration.</description>
+
+  <arg name="colors"/>
+  <arg name="cache" value=".phpcs-cache"/>
+  <arg name="parallel" value="10"/>
+
+  <file>.</file>
+
+  <exclude-pattern>vendor/*</exclude-pattern>
+
+  <rule ref="Acquia"/>
+
+</ruleset>
