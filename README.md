@@ -1,10 +1,10 @@
-# Acquia Coding Standards
+# Acquia PHP Coding Standards
 
-Acquia Coding Standards is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal modules.
+Acquia PHP Coding Standards is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia PHP Coding Standards for PHP projects, including Drupal modules.
 
 ## Rules
 
-Acquia Coding Standards includes a selection of sniffs from the following rulesets:
+Acquia PHP Coding Standards includes a selection of sniffs from the following rulesets:
 
 * [Drupal Code Sniffer](https://packagist.org/packages/drupal/coder) encapsulates [Drupal coding standards](https://www.drupal.org/coding-standards ) and best practices for module development.
 * [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
@@ -14,7 +14,7 @@ The exact details can be found in [`src/Acquia/ruleset.xml`](src/Acquia/ruleset.
 
 ## Installation & usage
 
-1. Add Acquia Coding Standards to your project via Composer:
+1. Add Acquia PHP Coding Standards to your project via Composer:
 
     ```bash
     composer require --dev acquia/coding-standards
