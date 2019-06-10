@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+         name="AcquiaDrupal"
+>
+
+  <description>Acquia's Drupal coding standards.</description>
+
+  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
+
+  <!-- Acquia PHP sniffs -->
+  <rule ref="AcquiaPHP"/>
+
+  <!-- Drupal sniffs -->
+  <rule ref="Drupal">
+    <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
+  </rule>
+  <!-- Relax rules for automated tests -->
+  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
+    <exclude-pattern>tests/*</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.ClassComment.Missing">
+    <exclude-pattern>tests/*</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.DocComment.MissingShort">
+    <exclude-pattern>tests/*</exclude-pattern>
+  </rule>
+  <rule ref="Drupal.Commenting.FunctionComment.Missing">
+    <exclude-pattern>tests/*</exclude-pattern>
+  </rule>
+
+  <!-- Drupal Practice sniffs -->
+  <rule ref="DrupalPractice.Commenting.ExpectedException"/>
+
+  <!-- PHPCS_SecurityAudit sniffs -->
+  <rule ref="Security.Drupal8"/>
+
+</ruleset>

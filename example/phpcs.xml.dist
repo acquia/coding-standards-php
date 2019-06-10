@@ -13,6 +13,6 @@
 
   <exclude-pattern>vendor/*</exclude-pattern>
 
-  <rule ref="Acquia"/>
+  <rule ref="AcquiaDrupal"/>
 
 </ruleset>

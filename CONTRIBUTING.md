@@ -1,4 +1,4 @@
-# Contributing to Acquia PHP Coding Standards
+# Contributing to Acquia Coding Standards for PHP
 
 Thank you for taking the time to contribute.
 

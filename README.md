@@ -1,20 +1,26 @@
-# Acquia PHP Coding Standards
+# Acquia Coding Standards for PHP
 
-Acquia PHP Coding Standards is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia PHP Coding Standards for PHP projects, including Drupal modules.
+Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
 
 ## Rules
 
-Acquia PHP Coding Standards includes a selection of sniffs from the following rulesets:
+Acquia Coding Standards for PHP includes a selection of sniffs from the following rulesets:
 
 * [Drupal Code Sniffer](https://packagist.org/packages/drupal/coder) encapsulates [Drupal coding standards](https://www.drupal.org/coding-standards ) and best practices for module development.
+* [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer) itself contains several broadly applicable rulesets.
 * [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
 * [phpcs-security-audit](https://packagist.org/packages/pheromone/phpcs-security-audit) finds vulnerabilities and weaknesses related to security in PHP code.
 
-The exact details can be found in [`src/Acquia/ruleset.xml`](src/Acquia/ruleset.xml).
+## Rulesets
+
+Rules are split into rulesets according to the project language and framework:
+
+* [AcquiaPHP](src/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
+* [AcquiaDrupal](src/AcquiaDrupal/ruleset.xml) incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
 
 ## Installation & usage
 
-1. Add Acquia PHP Coding Standards to your project via Composer:
+1. Add Acquia Coding Standards for PHP to your project via Composer:
 
     ```bash
     composer require --dev acquia/coding-standards
@@ -44,13 +50,13 @@ The exact details can be found in [`src/Acquia/ruleset.xml`](src/Acquia/ruleset.
 1. Check code for standards compliance:
 
     ```bash
-    ./vendor/bin/phpcs --standard=Acquia path/to/code
+    ./vendor/bin/phpcs --standard=AcquiaDrupal path/to/code
     ```
     
     Automatically fix any standards violations possible:
 
     ```bash
-    ./vendor/bin/phpcbf --standard=Acquia path/to/code
+    ./vendor/bin/phpcbf --standard=AcquiaDrupal path/to/code
     ```
     
 1. Optionally create a [default configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).

@@ -3,33 +3,12 @@
 <!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
-         name="Acquia"
+         name="AcquiaPHP"
 >
 
-  <description>Acquia's Drupal coding standards.</description>
+  <description>Acquia's PHP coding standards.</description>
 
-  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
-
-  <!-- Drupal sniffs -->
-  <rule ref="Drupal">
-    <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
-  </rule>
-  <!-- Relax rules for automated tests -->
-  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.ClassComment.Missing">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.DocComment.MissingShort">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.FunctionComment.Missing">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-
-  <!-- Drupal Practice sniffs -->
-  <rule ref="DrupalPractice.Commenting.ExpectedException"/>
+  <arg name="extensions" value="inc,php,yml"/>
 
   <!-- Generic sniffs -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
@@ -151,8 +130,6 @@
   <!-- Misc -->
   <rule ref="Security.Misc.BadCorsHeader"/>
   <rule ref="Security.Misc.IncludeMismatch"/>
-  <!-- Drupal -->
-  <rule ref="Security.Drupal8"/>
 
   <!-- PSR-2 sniffs -->
   <rule ref="PSR2.Classes.PropertyDeclaration">
