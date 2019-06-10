@@ -15,8 +15,8 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 
 Rules are split into rulesets according to the project language and framework:
 
-* [AcquiaPHP](src/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
-* [AcquiaDrupal](src/AcquiaDrupal/ruleset.xml) incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
+* [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
+* [AcquiaDrupal](src/Standards/AcquiaDrupal/ruleset.xml) incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
 
 ## Installation & usage
 
