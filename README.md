@@ -32,6 +32,10 @@ Rules are split into rulesets according to the project language and framework:
 
         ```bash
         composer config extra.phpcodesniffer-search-depth 4
+
+        # Change the newly-set value to a number, since `composer config` always creates strings.
+        sed -i'.bak' 's|"phpcodesniffer-search-depth": "4"|"phpcodesniffer-search-depth": 4|' composer.json
+
         composer require --dev dealerdirect/phpcodesniffer-composer-installer
         ```
 
