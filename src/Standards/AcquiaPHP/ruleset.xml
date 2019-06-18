@@ -11,7 +11,12 @@
   <arg name="extensions" value="inc,php,yml"/>
 
   <!-- Generic sniffs -->
+  <!--
+  @todo The presence of this rule causes errors, e.g.,
+    PHP Fatal error:  Uncaught Error: Call to undefined method DrupalPractice\Project::register() in vendor/squizlabs/php_codesniffer/src/Ruleset.php:1218
+    Fix the problem and re-enable the rule.
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+  -->
   <rule ref="Generic.Files.ByteOrderMark"/>
   <rule ref="Generic.Files.LineEndings"/>
   <rule ref="Generic.Formatting.SpaceAfterCast"/>
