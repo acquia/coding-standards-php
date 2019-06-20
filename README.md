@@ -21,7 +21,10 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 Rules are split into rulesets according to the project language and framework:
 
 * [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
-* [AcquiaDrupal](src/Standards/AcquiaDrupal/ruleset.xml) incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
+* [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) incorporates AcquiaPHP and adds all Drupal coding standards and best practices sniffs. It is recommended for new Drupal projects and teams familiar with Drupal coding standards.
+* [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) provides a relaxed standard for legacy Drupal codebases or teams new to Drupal coding standards. It incorporates AcquiaPHP and adds a more or less straight copy of Drupal core's own phpcs configuration, making it sufficient for core contribution.
+
+incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
 
 ## Installation & usage
 
@@ -63,13 +66,13 @@ Rules are split into rulesets according to the project language and framework:
 1. Check code for standards compliance:
 
     ```bash
-    ./vendor/bin/phpcs --standard=AcquiaDrupal path/to/code
+    ./vendor/bin/phpcs --standard=AcquiaDrupalStrict path/to/code
     ```
     
     Automatically fix any standards violations possible:
 
     ```bash
-    ./vendor/bin/phpcbf --standard=AcquiaDrupal path/to/code
+    ./vendor/bin/phpcbf --standard=AcquiaDrupalStrict path/to/code
     ```
     
 1. Optionally create a [default configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).
