@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Acquia\\DrupalCodingStandards\\": "src/"
+            "Acquia\\CodingStandards\\": "src/"
         }
     },
     "minimum-stability": "dev",
