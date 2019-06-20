@@ -46,6 +46,8 @@ incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
         composer config extra.phpcodesniffer-search-depth 4
 
         # Change the newly-set value to a number, since `composer config` always creates strings.
+        # @see https://github.com/composer/composer/issues/8195
+        # @see https://github.com/Dealerdirect/phpcodesniffer-composer-installer/issues/82
         sed -i'.bak' 's|"phpcodesniffer-search-depth": "4"|"phpcodesniffer-search-depth": 4|' composer.json && rm composer.json.bak
 
         composer require --dev dealerdirect/phpcodesniffer-composer-installer
