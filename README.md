@@ -25,8 +25,6 @@ Rules are split into rulesets according to the project language and framework:
 * [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) incorporates AcquiaPHP and adds all Drupal coding standards and best practices sniffs. It is recommended for new Drupal projects and teams familiar with Drupal coding standards.
 * [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) provides a relaxed standard for legacy Drupal codebases or teams new to Drupal coding standards. It incorporates AcquiaPHP and adds a more or less straight copy of Drupal core's own phpcs configuration, making it sufficient for core contribution.
 
-incorporates AcquiaPHP and adds sniffs applicable to Drupal projects.
-
 ## Installation & usage
 
 1. Add Acquia Coding Standards for PHP to your project via Composer:
