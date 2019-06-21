@@ -1,0 +1,67 @@
+---
+language: php
+
+php: "7.1"
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - "$HOME/.composer/cache"
+    - "$HOME/.drush/cache"
+    - "$TMPDIR/phpstan/cache"
+
+branches:
+  only:
+    - master
+    - develop
+    - wip
+
+env:
+  global:
+    - ORCA_SUT_NAME=acquia/coding-standards
+    - ORCA_SUT_BRANCH=master
+    - ORCA_VERSION=v1.0.0-alpha16
+    - ORCA_PACKAGES_CONFIG_ALTER=../coding-standards-php/tests/packages_alter.yml
+
+matrix:
+  fast_finish: true
+  include:
+    # Standard ORCA jobs.
+    - { name: "Static code analysis", env: ORCA_JOB=STATIC_CODE_ANALYSIS }
+    - { name: "Deprecated code scan", env: ORCA_JOB=DEPRECATED_CODE_SCAN_SUT }
+    - { name: "Isolated test w/ recommended package versions", env: ORCA_JOB=ISOLATED_RECOMMENDED }
+    - { name: "Integrated test w/ recommended package versions", env: ORCA_JOB=INTEGRATED_RECOMMENDED }
+    - { name: "Integrated test w/ recommended package versions & previous minor release of Drupal core", env: ORCA_JOB=CORE_PREVIOUS }
+    - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
+    - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
+    - { name: "Integrated test w/ dev package versions & next minor dev version of Drupal core", env: ORCA_JOB=CORE_NEXT }
+    # Custom job.
+    - { name: "Custom job" }
+  allow_failures:
+    - env: ORCA_JOB=ISOLATED_DEV
+    - env: ORCA_JOB=INTEGRATED_DEV
+    - env: ORCA_JOB=CORE_NEXT
+
+before_install:
+  - git clone --branch ${ORCA_VERSION} --depth 1 https://github.com/acquia/orca.git ../orca
+  # @todo Remove this patch on the next ORCA release.
+  - curl https://github.com/acquia/orca/commit/60539a6feb860d738796299a7f7bf2ea084fb31c.patch | git -C ../orca apply
+  - ../orca/bin/travis/before_install.sh
+
+install:
+  - ../orca/bin/travis/install.sh
+  - ./bin/travis/install.sh
+
+before_script: ../orca/bin/travis/before_script.sh
+
+script: ./bin/travis/script.sh
+
+before_cache: ../orca/bin/travis/before_cache.sh
+
+after_success: ../orca/bin/travis/after_success.sh
+
+after_failure: ../orca/bin/travis/after_failure.sh
+
+after_script: ../orca/bin/travis/after_script.sh

@@ -4,6 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/acquia/coding-standards/downloads)](https://packagist.org/packages/acquia/coding-standards)
 [![Latest Unstable Version](https://poser.pugx.org/acquia/coding-standards/v/unstable)](https://packagist.org/packages/acquia/coding-standards)
 [![License](https://poser.pugx.org/acquia/coding-standards/license)](https://packagist.org/packages/acquia/coding-standards)
+[![Build Status](https://travis-ci.org/acquia/coding-standards-php.svg?branch=master)](https://travis-ci.org/acquia/coding-standards-php)
 
 Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
 

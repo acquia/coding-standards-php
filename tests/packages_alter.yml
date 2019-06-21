@@ -1,0 +1,5 @@
+---
+acquia/coding-standards:
+  type: phpcodesniffer-standard
+  url: ../coding-standards-php
+  version_dev: 0.x-dev
