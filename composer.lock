@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "302271ff5bd0c58039c0e3235cd4fcfa",
+    "content-hash": "60bb3d1d954c911cad49a9aec3174b64",
     "packages": [
         {
             "name": "drupal/coder",
