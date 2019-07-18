@@ -22,8 +22,7 @@ env:
   global:
     - ORCA_SUT_NAME=acquia/coding-standards
     - ORCA_SUT_BRANCH=master
-    - ORCA_VERSION=v1.0.0-alpha17
-    - ORCA_PACKAGES_CONFIG_ALTER=../coding-standards-php/tests/packages_alter.yml
+    - ORCA_VERSION=v1.0.0-alpha18
 
 matrix:
   fast_finish: true
@@ -46,8 +45,6 @@ matrix:
 
 before_install:
   - git clone --branch ${ORCA_VERSION} --depth 1 https://github.com/acquia/orca.git ../orca
-  # @todo Remove this patch on the next ORCA release.
-  - curl https://github.com/acquia/orca/commit/60539a6feb860d738796299a7f7bf2ea084fb31c.patch | git -C ../orca apply
   - ../orca/bin/travis/before_install.sh
 
 install:
