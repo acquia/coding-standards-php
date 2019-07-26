@@ -17,7 +17,7 @@ source ../../../orca/bin/travis/_includes.sh
 # Running other packages' automated tests is overkill for a SUT that has no
 # runtime side-effects. Limit the standard jobs to static code analysis and
 # deprecated code scan jobs.
-if [[ " STATIC_CODE_ANALYSIS DEPRECATED_CODE_SCAN_SUT " == *" $ORCA_JOB "*  ]]; then
+if [[ " STATIC_CODE_ANALYSIS DEPRECATED_CODE_SCAN " == *" $ORCA_JOB "*  ]]; then
   ../../../orca/bin/travis/script.sh
   set +v
 fi
