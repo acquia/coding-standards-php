@@ -16,6 +16,7 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 * [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer) itself contains several broadly applicable rulesets.
 * [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
 * [phpcs-security-audit](https://packagist.org/packages/pheromone/phpcs-security-audit) finds vulnerabilities and weaknesses related to security in PHP code.
+* [Slevomat Coding Standard](https://github.com/slevomat/coding-standard) provides functional (safety and behavior), cleaning (dead code), and formatting (consistent look) sniffs.
 
 ## Rulesets
 
