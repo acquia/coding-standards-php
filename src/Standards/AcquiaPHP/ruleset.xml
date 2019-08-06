@@ -146,6 +146,9 @@
     <exclude name="PSR2.Namespaces.UseDeclaration.UseAfterNamespace"/>
   </rule>
 
+  <!-- SlevomatCodingStandard sniffs -->
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+
   <!-- Squiz sniffs -->
   <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
   <rule ref="Squiz.Arrays.ArrayDeclaration">
