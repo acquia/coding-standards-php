@@ -99,6 +99,8 @@
   <rule ref="Security.BadFunctions.Backticks"/>
   <rule ref="Security.BadFunctions.CallbackFunctions">
     <exclude
+      name="PHPCS_SecurityAudit.BadFunctions.CallbackFunctions.WarnCallbackFunctions"/>
+    <exclude
       name="PHPCS_SecurityAudit.BadFunctions.CallbackFunctions.WarnFringestuff"/>
   </rule>
   <rule ref="Security.BadFunctions.CryptoFunctions"/>
