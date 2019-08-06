@@ -45,23 +45,23 @@
         },
         {
             "name": "pheromone/phpcs-security-audit",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FloeDesignTechnologies/phpcs-security-audit.git",
-                "reference": "6ca3459ffe27f78ffd6554e662fc71f5f32f7055"
+                "reference": "68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FloeDesignTechnologies/phpcs-security-audit/zipball/6ca3459ffe27f78ffd6554e662fc71f5f32f7055",
-                "reference": "6ca3459ffe27f78ffd6554e662fc71f5f32f7055",
+                "url": "https://api.github.com/repos/FloeDesignTechnologies/phpcs-security-audit/zipball/68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2",
+                "reference": "68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
                 "squizlabs/php_codesniffer": ">3.0"
             },
-            "type": "library",
+            "type": "phpcodesniffer-standard",
             "autoload": {
                 "psr-4": {
                     "PHPCS_SecurityAudit\\": "Security/"
@@ -78,7 +78,7 @@
                 }
             ],
             "description": "phpcs-security-audit is a set of PHP_CodeSniffer rules that finds vulnerabilities and weaknesses related to security in PHP code",
-            "time": "2018-02-20T07:33:23+00:00"
+            "time": "2019-08-05T19:34:55+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
