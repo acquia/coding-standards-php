@@ -8,7 +8,7 @@
 
   <description>Acquia's transitional Drupal coding standards.</description>
 
-  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
+  <arg name="extensions" value="css,inc,install,module,php,profile,test,theme,yml"/>
 
   <!-- Acquia PHP sniffs -->
   <rule ref="AcquiaPHP"/>
