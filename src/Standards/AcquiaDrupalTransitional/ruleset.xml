@@ -8,11 +8,6 @@
 
   <description>Acquia's transitional Drupal coding standards.</description>
 
-  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
-
-  <!-- Acquia PHP sniffs -->
-  <rule ref="AcquiaPHP"/>
-
   <!-- Drupal sniffs -->
   <rule ref="Drupal">
     <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
@@ -39,5 +34,8 @@
 
   <!-- PHPCS_SecurityAudit sniffs -->
   <rule ref="Security.Drupal8"/>
+
+  <!-- Acquia PHP sniffs -->
+  <rule ref="AcquiaPHP"/>
 
 </ruleset>
