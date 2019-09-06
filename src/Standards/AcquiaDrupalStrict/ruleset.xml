@@ -8,8 +8,6 @@
 
   <description>Acquia's strict Drupal coding standards.</description>
 
-  <arg name="extensions" value="css,inc,install,module,php,profile,test,theme,yml"/>
-
   <!-- Drupal sniffs -->
   <rule ref="Drupal">
     <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
