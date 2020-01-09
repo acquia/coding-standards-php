@@ -14,7 +14,7 @@
   <arg name="parallel" value="10"/>
 
   <file>.</file>
-  
+
   <exclude-pattern>vendor/*</exclude-pattern>
 
   <rule ref="AcquiaDrupalStrict"/>
