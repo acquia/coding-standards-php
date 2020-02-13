@@ -38,18 +38,8 @@ Rules are split into rulesets according to the project language and framework:
 
     * It is strongly recommended that you use a Composer plugin to handle this for you, e.g., [`DealerDirect/phpcodesniffer-composer-installer`](https://github.com/DealerDirect/phpcodesniffer-composer-installer):
 
-        <!--
-        Concerning the ugly sed kludge below,
-        @see https://github.com/Dealerdirect/phpcodesniffer-composer-installer/issues/82
-        -->
         ```bash
         composer config extra.phpcodesniffer-search-depth 4
-
-        # Change the newly-set value to a number, since `composer config` always creates strings.
-        # @see https://github.com/composer/composer/issues/8195
-        # @see https://github.com/Dealerdirect/phpcodesniffer-composer-installer/issues/82
-        sed -i'.bak' 's|"phpcodesniffer-search-depth": "4"|"phpcodesniffer-search-depth": 4|' composer.json && rm composer.json.bak
-
         composer require --dev dealerdirect/phpcodesniffer-composer-installer
         ```
 
