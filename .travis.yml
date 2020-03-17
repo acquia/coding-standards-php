@@ -22,7 +22,7 @@ env:
   global:
     - ORCA_SUT_NAME=acquia/coding-standards
     - ORCA_SUT_BRANCH=master
-    - ORCA_VERSION=master
+    - ORCA_VERSION=dev-master
     - ORCA_TELEMETRY_ENABLE=TRUE
 
 matrix:
@@ -37,15 +37,17 @@ matrix:
     - { name: "Isolated test w/ dev package versions", env: ORCA_JOB=ISOLATED_DEV }
     - { name: "Integrated test w/ dev package versions", env: ORCA_JOB=INTEGRATED_DEV }
     - { name: "Integrated test w/ dev package versions & next minor dev version of Drupal core", env: ORCA_JOB=CORE_NEXT }
+    - { name: "D9 readiness test", php: "7.3", env: ORCA_JOB=D9_READINESS}
     # Custom job.
     - { name: "Custom job" }
   allow_failures:
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
     - env: ORCA_JOB=CORE_NEXT
+    - { php: "7.3", env: ORCA_JOB=D9_READINESS }
 
 before_install:
-  - git clone --branch ${ORCA_VERSION} --depth 1 https://github.com/acquia/orca.git ../orca
+  - composer create-project --no-dev acquia/orca ../orca "$ORCA_VERSION"
   - ../orca/bin/travis/before_install.sh
 
 install:
