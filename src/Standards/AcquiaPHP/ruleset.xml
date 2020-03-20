@@ -8,6 +8,8 @@
 
   <description>Acquia's PHP coding standards.</description>
 
+  <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
+
   <!-- Generic sniffs -->
   <!--
   @todo The presence of this rule causes errors:
