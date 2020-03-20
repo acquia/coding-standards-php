@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "drupal/coder": "^8.3",
+        "drupal/coder": "^8.3.7",
         "pheromone/phpcs-security-audit": "^2.0",
         "phpcompatibility/php-compatibility": "^9.0",
         "slevomat/coding-standard": "^5.0",

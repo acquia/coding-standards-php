@@ -11,11 +11,7 @@
   <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
 
   <!-- Generic sniffs -->
-  <!--
-  @todo The presence of this rule causes errors:
-    https://www.drupal.org/project/coder/issues/3062570
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-  -->
   <rule ref="Generic.Files.ByteOrderMark"/>
   <rule ref="Generic.Files.LineEndings"/>
   <rule ref="Generic.Formatting.SpaceAfterCast"/>
