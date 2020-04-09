@@ -1,0 +1,23 @@
+<!--
+Import this file on PhpStorm's inspection settings screen to set up PHP CodeSniffer integration.
+
+You may need to modify the "custom" ruleset path to use your phpcs.xml or phpcs.xml.dist if PhpStorm does not recognize the PROJECT_DIR variable.
+
+You may wish to copy this to your own project in order to distribute any custom settings, such as if you use phpcs.xml instead of phpcs.xml.dist.
+
+To replicate this setup manually:
+1. Enable the PHP CodeSniffer inspection.
+2. Select your phpcs.xml.dist as the custom ruleset.
+3. Set the extensions to scan: php,module,inc,install,test,profile,theme,css,info,txt,md,yml
+4. Raise the severity to at least _Warning_.
+-->
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Acquia Coding Standards" />
+    <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="CODING_STANDARD" value="Custom" />
+      <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/phpcs.xml.dist" />
+      <option name="EXTENSIONS" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml" />
+    </inspection_tool>
+  </profile>
+</component>

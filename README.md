@@ -75,7 +75,7 @@ Rules are split into rulesets according to the project language and framework:
 
 1. Optionally add code checking to your [Git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to prevent committing code with violations. Since client-side Git hooks are not copied when a repository is cloned, you might like to use an automated solution like [`BrainMaestro/composer-git-hooks`](https://packagist.org/packages/BrainMaestro/composer-git-hooks) to manage them, for example: [`example/composer.json`](example/composer.json).
 
-1. Optionally [configure PHP Code Sniffer integration in PhpStorm](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html) or your IDE or code editor of choice.
+1. Optionally [configure PHP Code Sniffer integration in PhpStorm](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html) or your IDE or code editor of choice. You can import [`example/PhpStormInspections.xml`](example/PhpStormInspections.xml) to set up this integration automatically. You may need to modify the “custom” ruleset configuration to use your phpcs.xml or phpcs.xml.dist.
 
 ## Contribution
 
