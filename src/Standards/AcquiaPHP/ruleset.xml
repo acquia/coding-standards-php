@@ -31,8 +31,8 @@
 
   <!-- Internal sniffs -->
   <rule ref="Internal.NoCodeFound">
-    <!-- No PHP code in *.yml -->
-    <exclude-pattern>*.yml</exclude-pattern>
+    <!-- No PHP code in *.md or *.yml -->
+    <exclude-pattern>*.(md|yml)</exclude-pattern>
   </rule>
 
   <!-- MySource sniffs -->
