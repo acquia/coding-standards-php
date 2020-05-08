@@ -1,21 +1,14 @@
 <!--
-Import this file on PhpStorm's inspection settings screen to set up PHP CodeSniffer integration.
+Import this file on PhpStorm's inspection settings screen to set up default PHP CodeSniffer integration settings for new projects. Select "yes" when prompted to overwrite your default settings. Only the following settings will be modified:
 
-You may need to modify the "custom" ruleset path to use your phpcs.xml or phpcs.xml.dist if PhpStorm does not recognize the PROJECT_DIR variable.
+1. PHP_CodeSniffer severity will be raised to "Warning".
+2. File extensions to scan will be set to Acquia Coding Standard defaults.
+3. The built-in PHPDoc signature inspection will be set to ignore missing parameters, to match Acquia Coding Standard rules.
 
-You may wish to copy this to your own project in order to distribute any custom settings, such as if you use phpcs.xml instead of phpcs.xml.dist.
-
-To replicate this setup manually:
-1. Enable the PHP CodeSniffer inspection.
-2. Select your phpcs.xml.dist as the custom ruleset.
-3. Set the extensions to scan: php,module,inc,install,test,profile,theme,css,info,txt,md,yml
-4. Raise the severity to at least _Warning_.
 -->
 <profile version="1.0">
-  <option name="myName" value="Acquia Coding Standards" />
-  <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="CODING_STANDARD" value="Custom" />
-    <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/phpcs.xml.dist" />
+  <option name="myName" value="Default" />
+  <inspection_tool class="PhpCSValidationInspection" enabled="false" level="WARNING" enabled_by_default="false">
     <option name="EXTENSIONS" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml" />
   </inspection_tool>
   <inspection_tool class="PhpDocSignatureInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
