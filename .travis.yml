@@ -44,7 +44,6 @@ matrix:
     - env: ORCA_JOB=ISOLATED_DEV
     - env: ORCA_JOB=INTEGRATED_DEV
     - env: ORCA_JOB=CORE_NEXT
-    - { php: "7.3", env: ORCA_JOB=D9_READINESS }
 
 before_install:
   - composer create-project --no-dev acquia/orca ../orca "$ORCA_VERSION"
