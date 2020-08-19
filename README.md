@@ -15,7 +15,6 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 * [Drupal Code Sniffer](https://packagist.org/packages/drupal/coder) encapsulates [Drupal coding standards](https://www.drupal.org/coding-standards ) and best practices for module development.
 * [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer) itself contains several broadly applicable rulesets.
 * [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
-* [phpcs-security-audit](https://packagist.org/packages/pheromone/phpcs-security-audit) finds vulnerabilities and weaknesses related to security in PHP code.
 * [Slevomat Coding Standard](https://github.com/slevomat/coding-standard) provides functional (safety and behavior), cleaning (dead code), and formatting (consistent look) sniffs.
 
 ## Rulesets
@@ -50,7 +49,7 @@ Rules are split into rulesets according to the project language and framework:
             "scripts": {
                 "post-install-cmd": "@install-coding-standards",
                 "post-update-cmd" : "@install-coding-standards",
-                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src,vendor/drupal/coder/coder_sniffer,vendor/pheromone/phpcs-security-audit,vendor/phpcompatibility/php-compatibility"
+                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src,vendor/drupal/coder/coder_sniffer,vendor/phpcompatibility/php-compatibility"
             }
         }
         ```

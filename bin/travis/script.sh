@@ -38,7 +38,6 @@ EXPECTED=(
   Drupal
   DrupalPractice
   PHPCompatibility
-  Security
 )
 echo "$INSTALLED"
 for STANDARD in "${EXPECTED[@]}"; do

@@ -34,12 +34,6 @@
   <!-- Drupal Practice sniffs -->
   <rule ref="DrupalPractice.Commenting.ExpectedException"/>
 
-  <!-- PHPCS_SecurityAudit sniffs -->
-  <rule ref="Security.Drupal8">
-    <!-- Security.BadFunctions.Asserts forces assertions to use string expressions. String expressions have been deprecated since PHP 7.2.0 -->
-    <exclude name="Security.BadFunctions.Asserts"/>
-  </rule>
-
   <!-- Acquia PHP sniffs -->
   <rule ref="AcquiaPHP"/>
 

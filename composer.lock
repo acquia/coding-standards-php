@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18c8da5c15f1f6a6533c54d491234260",
+    "content-hash": "ef12de13f33403240e313d876f94f8da",
     "packages": [
         {
             "name": "drupal/coder",
@@ -42,43 +42,6 @@
                 "standards"
             ],
             "time": "2019-12-07T16:00:28+00:00"
-        },
-        {
-            "name": "pheromone/phpcs-security-audit",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FloeDesignTechnologies/phpcs-security-audit.git",
-                "reference": "68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FloeDesignTechnologies/phpcs-security-audit/zipball/68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2",
-                "reference": "68a6c53a57156a5efb2073b1eb3f2d79a46c9dc2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "squizlabs/php_codesniffer": ">3.0"
-            },
-            "type": "phpcodesniffer-standard",
-            "autoload": {
-                "psr-4": {
-                    "PHPCS_SecurityAudit\\": "Security/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Marcil",
-                    "homepage": "https://twitter.com/jonathanmarcil"
-                }
-            ],
-            "description": "phpcs-security-audit is a set of PHP_CodeSniffer rules that finds vulnerabilities and weaknesses related to security in PHP code",
-            "time": "2019-08-05T19:34:55+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -401,5 +364,6 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
