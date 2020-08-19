@@ -9,7 +9,7 @@
 # DESCRIPTION
 #     Creates the test fixture.
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 
 # Reuse ORCA's own includes.
 source ../../../orca/bin/travis/_includes.sh
@@ -19,7 +19,7 @@ source ../../../orca/bin/travis/_includes.sh
 
 # Create a new Composer project.
 mkdir -p ~/fixture
-cd ~/fixture
+cd ~/fixture || exit 1
 composer init --no-interaction
 
 # Install the SUT.
