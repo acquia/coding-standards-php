@@ -9,7 +9,7 @@
 # DESCRIPTION
 #     Runs automated tests.
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 1
 
 # Reuse ORCA's own includes.
 source ../../../orca/bin/travis/_includes.sh
@@ -27,7 +27,7 @@ fi
 
 NO_COLOR="\033[0m"
 
-cd ~/fixture
+cd ~/fixture || exit 1
 
 # Test that all standards were installed.
 INSTALLED=$(./vendor/bin/phpcs -i)
@@ -38,7 +38,6 @@ EXPECTED=(
   Drupal
   DrupalPractice
   PHPCompatibility
-  Security
 )
 echo "$INSTALLED"
 for STANDARD in "${EXPECTED[@]}"; do

@@ -15,7 +15,6 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 * [Drupal Code Sniffer](https://packagist.org/packages/drupal/coder) encapsulates [Drupal coding standards](https://www.drupal.org/coding-standards ) and best practices for module development.
 * [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer) itself contains several broadly applicable rulesets.
 * [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
-* [phpcs-security-audit](https://packagist.org/packages/pheromone/phpcs-security-audit) finds vulnerabilities and weaknesses related to security in PHP code.
 * [Slevomat Coding Standard](https://github.com/slevomat/coding-standard) provides functional (safety and behavior), cleaning (dead code), and formatting (consistent look) sniffs.
 
 ## Rulesets
@@ -50,7 +49,7 @@ Rules are split into rulesets according to the project language and framework:
             "scripts": {
                 "post-install-cmd": "@install-coding-standards",
                 "post-update-cmd" : "@install-coding-standards",
-                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src,vendor/drupal/coder/coder_sniffer,vendor/pheromone/phpcs-security-audit,vendor/phpcompatibility/php-compatibility"
+                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src,vendor/drupal/coder/coder_sniffer,vendor/phpcompatibility/php-compatibility"
             }
         }
         ```
@@ -75,7 +74,7 @@ Rules are split into rulesets according to the project language and framework:
 
 1. Optionally add code checking to your [Git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to prevent committing code with violations. Since client-side Git hooks are not copied when a repository is cloned, you might like to use an automated solution like [`BrainMaestro/composer-git-hooks`](https://packagist.org/packages/BrainMaestro/composer-git-hooks) to manage them, for example: [`example/composer.json`](example/composer.json).
 
-1. Optionally [configure PHP Code Sniffer integration in PhpStorm](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html) or your IDE or code editor of choice.
+1. Optionally [configure PHP Code Sniffer integration in PhpStorm](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html) or your IDE or code editor of choice. You can import [`example/PhpStormInspections.xml`](example/PhpStormInspections.xml) to set up default integration for new projects. When you open or create a new project for the first time, PhpStorm should automatically detect and set up PHPCS inspections based on these defaults. You will just need to uncheck the “installed standards paths” in the inspection settings for your project so that PhpStorm can find the Acquia Coding Standards.
 
 ## Contribution
 

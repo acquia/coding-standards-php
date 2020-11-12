@@ -1,0 +1,17 @@
+<!--
+Import this file on PhpStorm's inspection settings screen to set up default PHP CodeSniffer integration settings for new projects. Select "yes" when prompted to overwrite your default settings. Only the following settings will be modified:
+
+1. PHP_CodeSniffer severity will be raised to "Warning".
+2. File extensions to scan will be set to Acquia Coding Standard defaults.
+3. The built-in PHPDoc signature inspection will be set to ignore missing parameters, to match Acquia Coding Standard rules.
+
+-->
+<profile version="1.0">
+  <option name="myName" value="Default" />
+  <inspection_tool class="PhpCSValidationInspection" enabled="false" level="WARNING" enabled_by_default="false">
+    <option name="EXTENSIONS" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml" />
+  </inspection_tool>
+  <inspection_tool class="PhpDocSignatureInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+    <option name="ALLOW_MISSING_PARAMETERS" value="true" />
+  </inspection_tool>
+</profile>
