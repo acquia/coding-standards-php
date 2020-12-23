@@ -10,6 +10,9 @@
 
   <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
 
+  <!-- Drupal sniffs -->
+  <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
+
   <!-- Generic sniffs -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
   <rule ref="Generic.Files.ByteOrderMark"/>
