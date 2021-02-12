@@ -20,7 +20,7 @@ source ../../../orca/bin/travis/_includes.sh
 # Create a new Composer project.
 mkdir -p ~/fixture
 cd ~/fixture || exit 1
-composer init --no-interaction
+composer init --name=test/example --no-interaction
 
 # Install the SUT.
 composer config repositories.coding-standards path "$ORCA_SUT_DIR"
