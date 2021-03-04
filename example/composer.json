@@ -10,10 +10,10 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "vendor/bin/phpcs",
-            "pre-push": "vendor/bin/phpcs",
             "post-install-cmd": "cghooks add --ignore-lock",
-            "post-update-cmd": "cghooks update"
+            "post-update-cmd": "cghooks update",
+            "pre-commit": "vendor/bin/phpcs",
+            "pre-push": "vendor/bin/phpcs"
         },
         "phpcodesniffer-search-depth": 4
     },
