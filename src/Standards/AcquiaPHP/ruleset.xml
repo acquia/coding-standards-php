@@ -10,6 +10,9 @@
 
   <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
 
+  <!-- Drupal sniffs -->
+  <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
+
   <!-- Generic sniffs -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
   <rule ref="Generic.Files.ByteOrderMark"/>
@@ -83,10 +86,12 @@
   </rule>
 
   <!-- PHP Compatibility sniffs -->
-  <!-- Use the lowest version of PHP supported by Drupal.
-    @see https://www.drupal.org/docs/8/system-requirements/php-requirements -->
-  <config name="testVersion" value="7.1-"/>
-  <rule ref="PHPCompatibility"/>
+  <!-- Use the lowest version of PHP recommended for Drupal.
+    @see https://www.drupal.org/docs/system-requirements/php-requirements -->
+  <config name="testVersion" value="7.3-"/>
+  <rule ref="PHPCompatibility">
+    <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
+  </rule>
 
   <!-- PSR-2 sniffs -->
   <rule ref="PSR2.Classes.PropertyDeclaration">
