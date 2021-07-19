@@ -15,6 +15,9 @@
 
   <file>.</file>
 
+  <!-- Danger! Exclude patterns apply to the full file path, including parent directories of the current repository. -->
+  <!-- Don't exclude common directory names like `build`, which will fail on Travis CI because of /home/travis/build/acquia/<project>. -->
+  <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/981 -->
   <exclude-pattern>vendor/*</exclude-pattern>
 
   <rule ref="AcquiaDrupalStrict"/>
