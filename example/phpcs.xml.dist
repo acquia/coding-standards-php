@@ -5,9 +5,12 @@
 
   <description>An example PHP CodeSniffer configuration.</description>
 
-  <!-- Set extensions to scan (taken from Coder 8.3.6). -->
+  <!-- Set extensions to scan. Uncomment for the respective standard. -->
   <!-- @see https://git.drupalcode.org/project/coder/blob/8.3.6/coder_sniffer/Drupal/ruleset.xml#L8 -->
+  <!-- AcquiaDrupalStrict and AcquiaDrupalTransitional -->
   <arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml"/>
+  <!-- AcquiaPHP -->
+  <!-- <arg name="extensions" value="php,inc,test,css,txt,md,yml"/> -->
 
   <arg name="colors"/>
   <arg name="cache" value=".phpcs-cache"/>
@@ -20,6 +23,9 @@
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/981 -->
   <exclude-pattern>vendor/*</exclude-pattern>
 
+  <!-- If you change the standard, be sure to also update the extensions to scan -->
   <rule ref="AcquiaDrupalStrict"/>
+  <!-- <rule ref="AcquiaDrupalTransitional"/> -->
+  <!-- <rule ref="AcquiaPHP"/> -->
 
 </ruleset>

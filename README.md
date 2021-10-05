@@ -57,20 +57,24 @@ Rules are split into rulesets according to the project language and framework:
 1. Check code for standards compliance:
 
     ```bash
-    ./vendor/bin/phpcs --standard=AcquiaDrupalStrict path/to/code
+    ./vendor/bin/phpcs --standard=AcquiaDrupalStrict --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml path/to/code
     ```
     
     Automatically fix any standards violations possible:
 
     ```bash
-    ./vendor/bin/phpcbf --standard=AcquiaDrupalStrict path/to/code
+    ./vendor/bin/phpcbf --standard=AcquiaDrupalStrict --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml path/to/code
     ```
+   
+    The `--extensions` argument must match the chosen code standard. For AcquiaPHP, use `--extensions=php,inc,test,css,txt,md,yml`.
     
 1. Optionally create a [default configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).
 
     ```bash
     ./vendor/bin/phpcs
     ```
+   
+    Modify `phpcs.xml.dist` to suit your project, especially to set the preferred code standard and matching extensions.
 
 1. Optionally add code checking to your [Git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to prevent committing code with violations. Since client-side Git hooks are not copied when a repository is cloned, you might like to use an automated solution like [`BrainMaestro/composer-git-hooks`](https://packagist.org/packages/BrainMaestro/composer-git-hooks) to manage them, for example: [`example/composer.json`](example/composer.json).
 
