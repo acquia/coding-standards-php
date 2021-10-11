@@ -8,8 +8,6 @@
 
   <description>Acquia's PHP coding standards.</description>
 
-  <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
-
   <!-- Drupal sniffs -->
   <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
 
