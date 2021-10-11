@@ -104,6 +104,7 @@
 
   <!-- SlevomatCodingStandard sniffs -->
   <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+  <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable" />
 
   <!-- Squiz sniffs -->
   <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
