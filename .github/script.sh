@@ -12,13 +12,13 @@
 cd "$(dirname "$0")" || exit 1
 
 # Reuse ORCA's own includes.
-source ../../../orca/bin/travis/_includes.sh || exit
+source ../../orca/bin/ci/_includes.sh || exit
 
 # Running other packages' automated tests is overkill for a SUT that has no
 # runtime side-effects. Limit the standard jobs to static code analysis and
 # deprecated code scan jobs.
 if [[ " STATIC_CODE_ANALYSIS DEPRECATED_CODE_SCAN " == *" $ORCA_JOB "*  ]]; then
-  ../../../orca/bin/travis/script.sh
+  ../../orca/bin/ci/script.sh
   set +v
 fi
 
