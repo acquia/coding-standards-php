@@ -68,13 +68,13 @@ jobs:
       - name: Install
         run: |
           ../orca/bin/ci/install.sh
-          ./bin/travis/install.sh
+          ./.github/install.sh
 
       - name: Before script
         run: ../orca/bin/ci/before_script.sh
 
       - name: Script
-        run: ./bin/travis/script.sh
+        run: ./.github/script.sh
 
       - name: After script
         run: ../orca/bin/ci/after_script.sh
