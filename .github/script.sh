@@ -12,7 +12,7 @@
 cd "$(dirname "$0")" || exit 1
 
 # Reuse ORCA's own includes.
-source ../../../orca/bin/travis/_includes.sh
+source ../../../orca/bin/travis/_includes.sh || exit
 
 # Running other packages' automated tests is overkill for a SUT that has no
 # runtime side-effects. Limit the standard jobs to static code analysis and
