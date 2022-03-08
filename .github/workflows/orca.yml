@@ -8,6 +8,7 @@ jobs:
       ORCA_SUT_NAME: acquia/coding-standards
       ORCA_SUT_BRANCH: master
       ORCA_VERSION: ^3
+      ORCA_TELEMETRY_ENABLE: TRUE
       ORCA_JOB: ${{ matrix.orca-job }}
       ORCA_COVERALLS_ENABLE: ${{ matrix.coveralls-enable }}
       COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
