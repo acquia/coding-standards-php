@@ -42,10 +42,10 @@ jobs:
             php-version: "8.0"
             coveralls-enable: "FALSE"
           - orca-job: ISOLATED_TEST_ON_CURRENT
-            php-version: "7.3"
+            php-version: "7.4"
             coveralls-enable: "TRUE"
           # Custom job
-          - php-version: "7.3"
+          - php-version: "7.4"
             orca-job: ""
 
     steps:
