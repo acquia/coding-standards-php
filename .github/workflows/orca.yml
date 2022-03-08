@@ -1,19 +1,16 @@
 ---
 name: ORCA CI
-on:
-  push:
-    branches: [ master, develop, wip ]
-  pull_request:
-    branches: [ master, develop, wip ]
+on: [ push, pull_request ]
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       ORCA_SUT_NAME: acquia/coding-standards
       ORCA_SUT_BRANCH: master
-      ORCA_VERSION: dev-develop
-      ORCA_TELEMETRY_ENABLE: TRUE
+      ORCA_VERSION: ^3
       ORCA_JOB: ${{ matrix.orca-job }}
+      ORCA_COVERALLS_ENABLE: ${{ matrix.coveralls-enable }}
+      COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     strategy:
       matrix:
@@ -39,12 +36,16 @@ jobs:
           - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV
           - LOOSE_DEPRECATED_CODE_SCAN
         php-version: [ "7.4" ]
+        coveralls-enable: [ "FALSE" ]
         include:
           - orca-job: ISOLATED_TEST_ON_CURRENT
             php-version: "8.0"
-
+            coveralls-enable: "FALSE"
+          - orca-job: ISOLATED_TEST_ON_CURRENT
+            php-version: "7.3"
+            coveralls-enable: "TRUE"
           # Custom job
-          - php-version: "7.4"
+          - php-version: "7.3"
             orca-job: ""
 
     steps:
@@ -57,13 +58,11 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          coverage: xdebug2
+          coverage: xdebug
 
       - name: Before install
         run: |
-          composer create-project --no-dev --no-install --ignore-platform-req=php acquia/orca ../orca "$ORCA_VERSION"
-          curl https://patch-diff.githubusercontent.com/raw/acquia/orca/pull/176.patch | git -C ../orca apply
-          composer install -d ../orca
+          composer create-project --no-dev acquia/orca ../orca "$ORCA_VERSION"
           ../orca/bin/ci/before_install.sh
 
       - name: Install
