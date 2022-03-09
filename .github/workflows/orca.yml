@@ -1,6 +1,14 @@
 ---
 name: ORCA CI
-on: [ push, pull_request ]
+on:
+    push:
+        branches: [ main, develop, wip, support/** ]
+    pull_request:
+        branches: [ develop ]
+    schedule:
+        # Sunday at 00:00:00 UTC.
+        # @see https://crontab.cronhub.io/
+        -   cron: "0 0 * * 0"
 jobs:
   build:
     runs-on: ubuntu-latest
