@@ -12,7 +12,7 @@
 cd "$(dirname "$0")" || exit 1
 
 # Reuse ORCA's own includes.
-source ../../../orca/bin/travis/_includes.sh
+source ../../orca/bin/ci/_includes.sh || exit
 
 # Exit early on standard ORCA jobs.
 [[ "$ORCA_JOB" ]] && exit 0

@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/acquia/coding-standards/downloads)](https://packagist.org/packages/acquia/coding-standards)
 [![Latest Unstable Version](https://poser.pugx.org/acquia/coding-standards/v/unstable)](https://packagist.org/packages/acquia/coding-standards)
 [![License](https://poser.pugx.org/acquia/coding-standards/license)](https://packagist.org/packages/acquia/coding-standards)
-[![Build Status](https://travis-ci.org/acquia/coding-standards-php.svg?branch=master)](https://travis-ci.org/acquia/coding-standards-php)
+[![Tests](https://github.com/acquia/coding-standards-php/actions/workflows/orca.yml/badge.svg)](https://github.com/acquia/coding-standards-php/actions/workflows/orca.yml)
 
 Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
 
@@ -24,7 +24,7 @@ Rules are split into rulesets according to the project language and framework:
 * [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
 * [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) incorporates AcquiaPHP and adds all Drupal coding standards and best practices sniffs. Recommended for new Drupal projects and teams familiar with Drupal coding standards.
 * [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) incorporates AcquiaPHP and adds Drupal core's own phpcs configuration, which is less strict than the official standards. Recommended for legacy Drupal codebases or teams new to Drupal coding standards.
-* [AcquiaEdge](src/Standards/AcquiaEdge/ruleset.xml) incorporates AcquiaPHP and adds backwards-incompatible sniffs that will be included in AcquiaPHP with the next major release of this package. 
+* [AcquiaEdge](src/Standards/AcquiaEdge/ruleset.xml) incorporates AcquiaPHP and adds backwards-incompatible sniffs that will be included in AcquiaPHP with the next major release of this package.
 
 ## Installation & usage
 
@@ -60,21 +60,21 @@ Rules are split into rulesets according to the project language and framework:
     ```bash
     ./vendor/bin/phpcs --standard=AcquiaDrupalStrict --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml path/to/code
     ```
-    
+
     Automatically fix any standards violations possible:
 
     ```bash
     ./vendor/bin/phpcbf --standard=AcquiaDrupalStrict --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml path/to/code
     ```
-   
+
     The `--extensions` argument must match the chosen code standard. For AcquiaPHP, use `--extensions=php,inc,test,css,txt,md,yml`.
-    
+
 1. Optionally create a [default configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).
 
     ```bash
     ./vendor/bin/phpcs
     ```
-   
+
     Modify `phpcs.xml.dist` to suit your project, especially to set the preferred code standard and matching extensions.
 
 1. Optionally add code checking to your [Git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to prevent committing code with violations. Since client-side Git hooks are not copied when a repository is cloned, you might like to use an automated solution like [`BrainMaestro/composer-git-hooks`](https://packagist.org/packages/BrainMaestro/composer-git-hooks) to manage them, for example: [`example/composer.json`](example/composer.json).

@@ -10,6 +10,9 @@
 
   <arg name="extensions" value="php,inc,test,css,txt,md,yml"/>
 
+  <!-- Generic sniffs -->
+  <rule ref="Generic.Files.EndFileNewline" />
+
   <!-- SlevomatCodingStandard sniffs -->
   <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable" />
 
