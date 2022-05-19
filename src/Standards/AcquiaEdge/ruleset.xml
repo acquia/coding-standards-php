@@ -11,4 +11,7 @@
   <!-- Acquia PHP sniffs -->
   <rule ref="AcquiaPHP"/>
 
+  <!-- Drupal sniffs -->
+  <rule ref="Drupal.Classes.UnusedUseStatement"/>
+
 </ruleset>
