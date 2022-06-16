@@ -13,5 +13,7 @@
 
   <!-- Drupal sniffs -->
   <rule ref="Drupal.Classes.UnusedUseStatement"/>
+  <!-- https://www.php-fig.org/psr/psr-12/#5-control-structures -->
+  <rule ref="Drupal.ControlStructures.ControlSignature" />
 
 </ruleset>
