@@ -106,6 +106,8 @@
 
   <!-- SlevomatCodingStandard sniffs -->
   <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+  <!-- Superglobals are superbad. See linked issue for discussion.
+    @see https://github.com/acquia/coding-standards-php/issues/49 -->
   <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable" />
 
   <!-- Squiz sniffs -->
