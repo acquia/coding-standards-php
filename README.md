@@ -50,7 +50,7 @@ Rules are split into rulesets according to the project language and framework:
             "scripts": {
                 "post-install-cmd": "@install-coding-standards",
                 "post-update-cmd" : "@install-coding-standards",
-                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src,vendor/drupal/coder/coder_sniffer,vendor/phpcompatibility/php-compatibility"
+                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src/Standards,vendor/drupal/coder/coder_sniffer,vendor/phpcompatibility/php-compatibility"
             }
         }
         ```
