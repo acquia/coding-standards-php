@@ -24,9 +24,9 @@ composer init --name=test/example --no-interaction
 
 # Install the SUT.
 composer config repositories.coding-standards path "$ORCA_SUT_DIR"
-composer require --dev acquia/coding-standards:@dev
-composer config extra.phpcodesniffer-search-depth 4
 composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+composer config extra.phpcodesniffer-search-depth 4
+composer require --dev acquia/coding-standards:@dev
 sed -i'.bak' 's|"phpcodesniffer-search-depth": "4"|"phpcodesniffer-search-depth": 4|' composer.json && rm composer.json.bak
 composer require --dev dealerdirect/phpcodesniffer-composer-installer
 
