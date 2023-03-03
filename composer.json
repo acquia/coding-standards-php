@@ -5,7 +5,8 @@
     "keywords": [
         "Drupal",
         "phpcs",
-        "standards"
+        "standards",
+        "static analysis"
     ],
     "license": "GPL-2.0-only",
     "authors": [
