@@ -9,6 +9,7 @@
   <description>Acquia's PHP coding standards.</description>
 
   <!-- Drupal sniffs -->
+  <!-- These provide PHPCBF integration, unlike their Squiz equivalents -->
   <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
 
   <!-- Generic sniffs -->
