@@ -11,19 +11,4 @@
   <!-- Acquia PHP sniffs -->
   <rule ref="AcquiaPHP"/>
 
-  <!-- Drupal sniffs -->
-  <rule ref="Drupal.Classes.ClassDeclaration" />
-  <rule ref="Drupal.Classes.UnusedUseStatement"/>
-  <rule ref="Drupal.Functions.FunctionDeclaration" />
-  <!-- https://www.php-fig.org/psr/psr-12/#5-control-structures -->
-  <rule ref="Drupal.ControlStructures.ControlSignature" />
-  <rule ref="PSR12.Functions.ReturnTypeDeclaration" />
-  <rule ref="Drupal.Scope.MethodScope"/>
-  <rule ref="Drupal.Scope.MethodScope"/>
-
-  <!-- SlevomatCodingStandard sniffs -->
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
-  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
-  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint" />
-
 </ruleset>
