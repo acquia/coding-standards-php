@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98d5f97fda1e42ea6e010add07adbb88",
+    "content-hash": "f493261a5f0b8c1430950cfa77a497f0",
     "packages": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -86,8 +86,14 @@
             "version": "8.3.16",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/coder.git",
+                "url": "https://github.com/pfrenssen/coder.git",
                 "reference": "d6f6112e5e84ff4f6baaada223c93dadbd6d3887"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/d6f6112e5e84ff4f6baaada223c93dadbd6d3887",
+                "reference": "d6f6112e5e84ff4f6baaada223c93dadbd6d3887",
+                "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
