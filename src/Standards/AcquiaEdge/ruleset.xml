@@ -12,6 +12,7 @@
   <rule ref="AcquiaPHP"/>
 
   <!-- SlevomatCodingStandard sniffs -->
+  <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing" />
   <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
 
 </ruleset>
