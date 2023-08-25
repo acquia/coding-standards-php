@@ -8,7 +8,7 @@ Import this file on PhpStorm's inspection settings screen to set up default PHP 
 -->
 <profile version="1.0">
   <option name="myName" value="Acquia Coding Standards" />
-  <inspection_tool class="PhpCSValidationInspection" enabled="false" level="WARNING" enabled_by_default="false">
+  <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="EXTENSIONS" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml" />
   </inspection_tool>
   <inspection_tool class="PhpDocSignatureInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
