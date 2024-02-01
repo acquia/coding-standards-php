@@ -38,16 +38,16 @@
   <!-- Drupal should type hint hooks -->
   <!-- @see https://www.drupal.org/project/drupal/issues/3229216 -->
   <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification">
-    <exclude-pattern>docroot/modules/custom/*/*.module</exclude-pattern>
+    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>docroot/modules/custom/*/*.module</exclude-pattern>
+    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>docroot/modules/custom/*/*.module</exclude-pattern>
+    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification">
-    <exclude-pattern>docroot/modules/custom/*/*.module</exclude-pattern>
+    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
   </rule>
 
 </ruleset>
