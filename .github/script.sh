@@ -54,7 +54,7 @@ if [[ "$FAILURES" ]]; then
 fi
 
 # Place a good test file.
-printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n" > good.php
+printf "<?php\n\ndeclare(strict_types = 1);\n\n/**\n * @file\n * Good test file.\n */\n" > good.php
 
 # Test that the SUT's standards can be run.
 EXPECTED=(
