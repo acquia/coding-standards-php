@@ -15,7 +15,7 @@
 
   <!-- Drupal sniffs -->
   <rule ref="Drupal.Classes.UnusedUseStatement"/>
-  <rule ref="Drupal.WhiteSpace.ScopeIndent" />
+  <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
 
   <!-- Generic sniffs -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
