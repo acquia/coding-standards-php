@@ -11,6 +11,8 @@
   <rule ref="PSR12">
     <exclude name="Generic.WhiteSpace.ScopeIndent"/>
     <exclude name="Generic.PHP.LowerCaseConstant"/>
+    <exclude name="PSR2.Classes.ClassDeclaration"/>
+    <exclude name="Squiz.Functions.FunctionDeclaration"/>
   </rule>
 
   <!-- Drupal sniffs -->
