@@ -8,11 +8,13 @@
 
   <description>Acquia's PHP coding standards.</description>
 
+  <!-- The Acquia PHP standard is PSR-12 modified to be compatible with Drupal standards -->
   <rule ref="PSR12">
     <exclude name="Generic.WhiteSpace.ScopeIndent"/>
     <exclude name="Generic.PHP.LowerCaseConstant"/>
     <exclude name="PSR2.Classes.ClassDeclaration"/>
     <exclude name="Squiz.Functions.FunctionDeclaration"/>
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
   </rule>
 
   <!-- Drupal sniffs -->
@@ -148,6 +150,23 @@
     <severity>0</severity>
   </rule>
   <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNoNewline">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration" />
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.ContentAfterBrace">
+    <severity>0</severity>
+  </rule>
+  <!-- Standard yet to be finalized on this (https://www.drupal.org/node/1539712). -->
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.FirstParamSpacing">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.Indent">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.CloseBracketLine">
     <severity>0</severity>
   </rule>
   <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
