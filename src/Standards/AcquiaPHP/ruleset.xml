@@ -14,6 +14,7 @@
     <exclude name="Generic.PHP.LowerCaseConstant"/>
     <exclude name="PSR2.Classes.ClassDeclaration"/>
     <exclude name="PSR2.Methods.FunctionCallSignature"/>
+    <exclude name="Squiz.ControlStructures.ControlSignature"/>
     <exclude name="Squiz.Functions.FunctionDeclaration"/>
     <exclude name="Squiz.Functions.MultiLineFunctionDeclaration"/>
   </rule>
@@ -25,6 +26,7 @@
   </rule>
 
   <!-- Drupal sniffs -->
+  <rule ref="Drupal.ControlStructures.ControlSignature"/>
   <rule ref="Drupal.Classes.UnusedUseStatement"/>
   <rule ref="Drupal.Commenting.InlineComment"/>
   <rule ref="Drupal.WhiteSpace.ScopeIndent"/>
