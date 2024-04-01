@@ -67,6 +67,13 @@
     <severity>0</severity>
   </rule>
 
+  <!-- PSR-12 sniffs -->
+  <rule ref="PSR12.ControlStructures.ControlStructureSpacing">
+    <properties>
+      <property name="indent" value="2"/>
+    </properties>
+  </rule>
+
   <!-- PHP Compatibility sniffs -->
   <!-- The lowest version of PHP supported by both Drupal and Acquia Cloud.
     @see https://www.drupal.org/docs/8/system-requirements/php-requirements
