@@ -21,9 +21,9 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 
 Rules are split into rulesets according to the project language and framework:
 
-* [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
-* [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) incorporates AcquiaPHP and adds all Drupal coding standards and best practices sniffs. Recommended for new Drupal projects and teams familiar with Drupal coding standards.
-* [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) incorporates AcquiaPHP and adds Drupal core's own phpcs configuration, which is less strict than the official standards. Recommended for legacy Drupal codebases or teams new to Drupal coding standards.
+* [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) is the preferred standard for all Acquia projects, including Drupal projects. It is based on PSR-12 and compatible with Drupal standards. In other words, any code meeting the AcquiaPHP standard will also meet Drupal standards, but will take advantage of new language features offered by PSR-12 and (soon) PER-2.
+* [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) is based on Drupal coding standards and best practices sniffs. Recommended for legacy Drupal projects and teams familiar with Drupal coding standards that don't want to use the stricter AcquiaPHP standard.
+* [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) is based on Drupal core's own phpcs configuration, which is less strict than the official standards. Recommended for legacy Drupal codebases or teams new to Drupal coding standards.
 * [AcquiaEdge](src/Standards/AcquiaEdge/ruleset.xml) incorporates AcquiaPHP and adds backwards-incompatible sniffs that will be included in AcquiaPHP with the next major release of this package.
 
 ## Installation & usage

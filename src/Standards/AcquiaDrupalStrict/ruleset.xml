@@ -32,7 +32,4 @@
   <!-- Drupal Practice sniffs -->
   <rule ref="DrupalPractice"/>
 
-  <!-- Acquia PHP sniffs -->
-  <rule ref="AcquiaPHP"/>
-
 </ruleset>
