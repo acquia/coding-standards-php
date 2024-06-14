@@ -11,7 +11,7 @@ on:
         -   cron: "0 0 * * 0"
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       ORCA_SUT_NAME: acquia/coding-standards
       ORCA_SUT_BRANCH: master
@@ -61,18 +61,16 @@ jobs:
             php-version: "8.0"
             coveralls-enable: "FALSE"
             orca-version: "^3"
-          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-          #   php-version: "8.1"
-          #   coveralls-enable: "FALSE"
-          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-          #   php-version: "8.1"
-          #   coveralls-enable: "FALSE"
-          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-          #   php-version: "8.1"
-          #   coveralls-enable: "FALSE"
-          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-          #   php-version: "8.1"
-          #   coveralls-enable: "FALSE"
+
+          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.3"
+          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+            php-version: "8.3"
+          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+            php-version: "8.3"
+          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+            php-version: "8.3"
+
           # - orca-job: ISOLATED_TEST_ON_CURRENT
           #   php-version: "8.0"
           #   coveralls-enable: "FALSE"
