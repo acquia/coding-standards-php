@@ -3,10 +3,10 @@
 <!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
-         name="AcquiaDrupalTransitional"
+         name="AcquiaDrupal"
 >
 
-  <description>Acquia's transitional Drupal coding standards.</description>
+  <description>Acquia's Drupal coding standards.</description>
 
   <!-- Drupal sniffs -->
   <rule ref="Drupal">
@@ -31,23 +31,5 @@
 
   <!-- Drupal Practice sniffs -->
   <rule ref="DrupalPractice.Commenting.ExpectedException"/>
-
-  <!-- Acquia PHP sniffs -->
-  <rule ref="AcquiaPHP"/>
-
-  <!-- Drupal should type hint hooks -->
-  <!-- @see https://www.drupal.org/project/drupal/issues/3229216 -->
-  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification">
-    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
-  </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
-  </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
-  </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification">
-    <exclude-pattern>*/modules/custom/*/*\.(module|install)$</exclude-pattern>
-  </rule>
 
 </ruleset>

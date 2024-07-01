@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+         name="AcquiaPHPStrict"
+>
+
+  <description>Acquia's strict PHP coding standards.</description>
+
+  <rule ref="AcquiaPHP"/>
+
+  <!-- SlevomatCodingStandard sniffs -->
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
+  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint" />
+  <!-- Superglobals are superbad. See linked issue for discussion.
+  @see https://github.com/acquia/coding-standards-php/issues/49 -->
+  <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable" />
+
+</ruleset>
