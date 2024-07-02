@@ -33,7 +33,8 @@ cd ~/fixture || exit 1
 INSTALLED=$(./vendor/bin/phpcs -i)
 EXPECTED=(
   AcquiaDrupalStrict
-  AcquiaDrupalTransitional
+  AcquiaDrupal
+  AcquiaPHPStrict
   AcquiaPHP
   Drupal
   DrupalPractice
@@ -54,12 +55,13 @@ if [[ "$FAILURES" ]]; then
 fi
 
 # Place a good test file.
-printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n" > good.php
+printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n\ndeclare(strict_types=1);\n" > good.php
 
 # Test that the SUT's standards can be run.
 EXPECTED=(
   AcquiaDrupalStrict
-  AcquiaDrupalTransitional
+  AcquiaDrupal
+  AcquiaPHPStrict
   AcquiaPHP
 )
 for STANDARD in "${EXPECTED[@]}"; do
