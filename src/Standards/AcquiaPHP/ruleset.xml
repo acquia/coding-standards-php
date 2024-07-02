@@ -8,7 +8,7 @@
 
   <description>Acquia's PHP coding standards.</description>
 
-  <rule ref="PSR12" />
+  <rule ref="PSR12"/>
 
   <!-- Internal sniffs -->
   <rule ref="Internal.NoCodeFound">
@@ -25,6 +25,14 @@
   <config name="testVersion" value="7.4-"/>
   <rule ref="PHPCompatibility">
     <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
+  </rule>
+
+  <!-- PSR-12 has no opinion on comments, leading to unpredictable indentation. -->
+  <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/2314 -->
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="ignoreIndentationTokens" type="array"/>
+    </properties>
   </rule>
 
 </ruleset>
