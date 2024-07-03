@@ -29,7 +29,4 @@
     <exclude-pattern>tests/*</exclude-pattern>
   </rule>
 
-  <!-- Drupal Practice sniffs -->
-  <rule ref="DrupalPractice.Commenting.ExpectedException"/>
-
 </ruleset>
