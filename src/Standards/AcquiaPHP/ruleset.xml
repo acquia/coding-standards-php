@@ -27,7 +27,7 @@
     <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
   </rule>
 
-  <!-- PSR-12 has no opinion on comments, leading to unpredictable indentation. -->
+  <!-- Apply indentation rules to all kinds of code (i.e., tokens), including comments. -->
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/2314 -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
