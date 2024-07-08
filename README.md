@@ -31,10 +31,6 @@ There are four permutations of these guidelines, leading to four rulesets to cho
 * [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) is based on PSR-12 and is intended for use on all public non-Drupal projects.
 * [AcquiaPHPStrict](src/Standards/AcquiaPHPStrict/ruleset.xml) is based on AcquiaPHP and adds additional, more opinionated standards. It is intended for use on all internal, non-Drupal projects.
 
-There is one additional ruleset intended to maintain backwards compatibility between major releases:
-
-* [AcquiaEdge](src/Standards/AcquiaEdge/ruleset.xml) incorporates AcquiaPHP and adds backwards-incompatible sniffs that will be included in AcquiaPHP with the next major release of this package.
-
 ## Installation & usage
 
 1. Add Acquia Coding Standards for PHP to your project via Composer:
