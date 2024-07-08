@@ -22,7 +22,7 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 Rules are split into rulesets according to the project *framework* and *audience*:
 
 * Projects targeting the Drupal community, e.g., Drupal modules, should adopt a *Drupal* ruleset. All others should adopt a (more generalized) *PHP* ruleset.
-* Public projects (e.g., open-source Drupal modules) should adopt a *non-strict* ruleset to facilitate external collaboration. All others should adopt a more opinionated *internal* ruleset.
+* Public projects, e.g., open-source Drupal modules, should adopt a *non-strict* ruleset to facilitate external collaboration. All others should adopt a more opinionated *internal* ruleset.
 
 There are four permutations of these guidelines, leading to four rulesets to choose from:
 
