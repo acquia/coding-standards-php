@@ -12,6 +12,7 @@
   <rule ref="Drupal">
     <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
   </rule>
+
   <!-- Relax rules for automated tests -->
   <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
     <exclude-pattern>tests/*</exclude-pattern>
