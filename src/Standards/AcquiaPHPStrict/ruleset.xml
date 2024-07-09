@@ -8,7 +8,7 @@
 
   <description>Acquia's strict PHP coding standards.</description>
 
-  <rule ref="AcquiaPHP"/>
+  <rule ref="AcquiaPHPMinimal"/>
 
   <!-- Drupal sniffs -->
   <rule ref="Drupal.Commenting.InlineComment"/>

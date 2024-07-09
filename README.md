@@ -26,9 +26,9 @@ Rules are split into rulesets according to the project *framework* and *audience
 
 There are four permutations of these guidelines, leading to four rulesets to choose from:
 
-* [AcquiaDrupal](src/Standards/AcquiaDrupal/ruleset.xml) is based on the Drupal coding standard and is intended for use on all public Drupal projects.
+* [AcquiaDrupalMinimal](src/Standards/AcquiaDrupalMinimal/ruleset.xml) is based on the Drupal coding standard and is intended for use on all public Drupal projects.
 * [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) is based on AcquiaDrupal and adds the more opinionated DrupalPractice standard. It is intended for use on all internal Drupal projects.
-* [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) is based on PSR-12 and is intended for use on all public non-Drupal projects.
+* [AcquiaPHPMinimal](src/Standards/AcquiaPHPMinimal/ruleset.xml) is based on PSR-12 and is intended for use on all public non-Drupal projects.
 * [AcquiaPHPStrict](src/Standards/AcquiaPHPStrict/ruleset.xml) is based on AcquiaPHP and adds additional, more opinionated standards. It is intended for use on all internal, non-Drupal projects.
 
 ## Installation & usage

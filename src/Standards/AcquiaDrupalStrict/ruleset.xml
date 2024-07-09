@@ -9,7 +9,7 @@
   <description>Acquia's strict Drupal coding standards.</description>
 
   <!-- Drupal sniffs -->
-  <rule ref="AcquiaDrupal"/>
+  <rule ref="AcquiaDrupalMinimal"/>
 
   <!-- Drupal Practice sniffs -->
   <rule ref="DrupalPractice"/>

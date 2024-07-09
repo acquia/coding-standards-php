@@ -32,10 +32,10 @@ cd ~/fixture || exit 1
 # Test that all standards were installed.
 INSTALLED=$(./vendor/bin/phpcs -i)
 EXPECTED=(
+  AcquiaDrupalMinimal
   AcquiaDrupalStrict
-  AcquiaDrupal
+  AcquiaPHPMinimal
   AcquiaPHPStrict
-  AcquiaPHP
   Drupal
   DrupalPractice
   PHPCompatibility
@@ -59,10 +59,10 @@ printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n\ndeclare(strict_types=
 
 # Test that the SUT's standards can be run.
 EXPECTED=(
+  AcquiaDrupalMinimal
   AcquiaDrupalStrict
-  AcquiaDrupal
+  AcquiaPHPMinimal
   AcquiaPHPStrict
-  AcquiaPHP
 )
 for STANDARD in "${EXPECTED[@]}"; do
   ./vendor/bin/phpcs -v --standard="$STANDARD" good.php
