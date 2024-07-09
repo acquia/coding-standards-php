@@ -28,7 +28,7 @@
     <properties>
       <!-- Recommended by Slevomat -->
       <!-- @see https://github.com/slevomat/coding-standard/blob/c72b104f89c6d7bd8b739449f9f592cda2e5072b/doc/commenting.md?plain=1#L20 -->
-      <property name="forbiddenAnnotations" type="array" value="@author,@created,@version,@package,@copyright,@license" />
+      <property name="forbiddenAnnotations" type="array" value="@author,@created,@version,@copyright,@license" />
     </properties>
   </rule>
   <rule ref="SlevomatCodingStandard.Commenting.ForbiddenComments">
