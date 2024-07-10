@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+         name="AcquiaPHPMinimal"
+>
+
+  <description>Acquia's PHP coding standards.</description>
+
+  <rule ref="PSR12"/>
+
+  <!-- Internal sniffs -->
+  <rule ref="Internal.NoCodeFound">
+    <!-- No PHP code in *.md, *.txt, or *.yml -->
+    <exclude-pattern>*.(md|txt|yml)</exclude-pattern>
+  </rule>
+
+  <!-- PHP Compatibility sniffs -->
+  <!-- The lowest version of PHP supported by both Drupal and Acquia Cloud.
+    @see https://www.drupal.org/docs/8/system-requirements/php-requirements
+    @see https://docs.acquia.com/acquia-cloud/arch/tech-platform/
+    For instructions on overriding this value in your project,
+    @see https://github.com/acquia/coding-standards-php/pull/37 -->
+  <config name="testVersion" value="7.4-"/>
+  <rule ref="PHPCompatibility">
+    <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
+  </rule>
+
+  <!-- Apply indentation rules to all kinds of code (i.e., tokens), including comments. -->
+  <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/2314 -->
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="ignoreIndentationTokens" type="array"/>
+    </properties>
+  </rule>
+
+</ruleset>

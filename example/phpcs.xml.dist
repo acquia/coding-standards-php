@@ -7,10 +7,10 @@
 
   <!-- Uncomment your chosen standard and the filename extensions corresponding to it. -->
   <!-- @see https://github.com/acquia/coding-standards-php/issues/18 for background on filename extensions. -->
+  <!-- <rule ref="AcquiaDrupalMinimal"/><arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml"/> -->
   <rule ref="AcquiaDrupalStrict"/><arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml"/>
-  <!-- <rule ref="AcquiaDrupalTransitional"/><arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml"/> -->
-  <!-- <rule ref="AcquiaPHP"/><arg name="extensions" value="php,inc,test,css,txt,md,yml"/> -->
-  <!-- <rule ref="AcquiaEdge"/><arg name="extensions" value="php,inc,test,css,txt,md,yml"/> -->
+  <!-- <rule ref="AcquiaPHPMinimal"/><arg name="extensions" value="php,inc,test,css,txt,md,yml"/> -->
+  <!-- <rule ref="AcquiaPHPStrict"/><arg name="extensions" value="php,inc,test,css,txt,md,yml"/> -->
 
   <arg name="colors"/>
   <arg name="cache" value=".phpcs-cache"/>

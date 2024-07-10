@@ -9,30 +9,9 @@
   <description>Acquia's strict Drupal coding standards.</description>
 
   <!-- Drupal sniffs -->
-  <rule ref="Drupal">
-    <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
-  </rule>
-  <!-- Relax rules for automated tests -->
-  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.ClassComment.Missing">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.DocComment.MissingShort">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.FunctionComment.Missing">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
-  <rule ref="Drupal.Commenting.VariableComment.Missing">
-    <exclude-pattern>tests/*</exclude-pattern>
-  </rule>
+  <rule ref="AcquiaDrupalMinimal"/>
 
   <!-- Drupal Practice sniffs -->
   <rule ref="DrupalPractice"/>
-
-  <!-- Acquia PHP sniffs -->
-  <rule ref="AcquiaPHP"/>
 
 </ruleset>

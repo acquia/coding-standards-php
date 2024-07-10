@@ -19,12 +19,17 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 
 ## Rulesets
 
-Rules are split into rulesets according to the project language and framework:
+Rules are split into rulesets according to the project *framework* and *audience*:
 
-* [AcquiaPHP](src/Standards/AcquiaPHP/ruleset.xml) contains sniffs applicable to all PHP projects.
-* [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) incorporates AcquiaPHP and adds all Drupal coding standards and best practices sniffs. Recommended for new Drupal projects and teams familiar with Drupal coding standards.
-* [AcquiaDrupalTransitional](src/Standards/AcquiaDrupalTransitional/ruleset.xml) incorporates AcquiaPHP and adds Drupal core's own phpcs configuration, which is less strict than the official standards. Recommended for legacy Drupal codebases or teams new to Drupal coding standards.
-* [AcquiaEdge](src/Standards/AcquiaEdge/ruleset.xml) incorporates AcquiaPHP and adds backwards-incompatible sniffs that will be included in AcquiaPHP with the next major release of this package.
+* Projects targeting the Drupal community, e.g., Drupal modules, should adopt a *Drupal* ruleset. All others should adopt a (more generalized) *PHP* ruleset.
+* Public projects, e.g., open-source Drupal modules, should adopt a *non-strict* ruleset to facilitate external collaboration. All others should adopt a more opinionated *internal* ruleset.
+
+There are four permutations of these guidelines, leading to four rulesets to choose from:
+
+* [AcquiaDrupalMinimal](src/Standards/AcquiaDrupalMinimal/ruleset.xml) is based on the Drupal coding standard and is intended for use on all public Drupal projects.
+* [AcquiaDrupalStrict](src/Standards/AcquiaDrupalStrict/ruleset.xml) is based on AcquiaDrupal and adds the more opinionated DrupalPractice standard. It is intended for use on all internal Drupal projects.
+* [AcquiaPHPMinimal](src/Standards/AcquiaPHPMinimal/ruleset.xml) is based on PSR-12 and is intended for use on all public non-Drupal projects.
+* [AcquiaPHPStrict](src/Standards/AcquiaPHPStrict/ruleset.xml) is based on AcquiaPHP and adds additional, more opinionated standards. It is intended for use on all internal, non-Drupal projects.
 
 ## Installation & usage
 

@@ -8,7 +8,7 @@
         "standards",
         "static analysis"
     ],
-    "license": "GPL-2.0-only",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Acquia Engineering",
@@ -34,7 +34,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "2.x-dev"
+            "dev-develop": "3.x-dev"
         }
     },
     "autoload": {

@@ -3,15 +3,27 @@
 <!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
-         name="AcquiaDrupalTransitional"
+         name="AcquiaDrupalMinimal"
 >
 
-  <description>Acquia's transitional Drupal coding standards.</description>
+  <description>Acquia's Drupal coding standards.</description>
 
   <!-- Drupal sniffs -->
   <rule ref="Drupal">
     <exclude name="Drupal.Files.TxtFileLineLength.TooLong"/>
   </rule>
+
+  <!-- PHP Compatibility sniffs -->
+  <!-- The lowest version of PHP supported by both Drupal and Acquia Cloud.
+    @see https://www.drupal.org/docs/8/system-requirements/php-requirements
+    @see https://docs.acquia.com/acquia-cloud/arch/tech-platform/
+    For instructions on overriding this value in your project,
+    @see https://github.com/acquia/coding-standards-php/pull/37 -->
+  <config name="testVersion" value="7.4-"/>
+  <rule ref="PHPCompatibility">
+    <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
+  </rule>
+
   <!-- Relax rules for automated tests -->
   <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
     <exclude-pattern>tests/*</exclude-pattern>
@@ -28,11 +40,5 @@
   <rule ref="Drupal.Commenting.VariableComment.Missing">
     <exclude-pattern>tests/*</exclude-pattern>
   </rule>
-
-  <!-- Drupal Practice sniffs -->
-  <rule ref="DrupalPractice.Commenting.ExpectedException"/>
-
-  <!-- Acquia PHP sniffs -->
-  <rule ref="AcquiaPHP"/>
 
 </ruleset>
