@@ -32,9 +32,10 @@ cd ~/fixture || exit 1
 # Test that all standards were installed.
 INSTALLED=$(./vendor/bin/phpcs -i)
 EXPECTED=(
+  AcquiaDrupalMinimal
   AcquiaDrupalStrict
-  AcquiaDrupalTransitional
-  AcquiaPHP
+  AcquiaPHPMinimal
+  AcquiaPHPStrict
   Drupal
   DrupalPractice
   PHPCompatibility
@@ -54,13 +55,14 @@ if [[ "$FAILURES" ]]; then
 fi
 
 # Place a good test file.
-printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n" > good.php
+printf "<?php\n\n/**\n * @file\n * Good test file.\n */\n\ndeclare(strict_types=1);\n" > good.php
 
 # Test that the SUT's standards can be run.
 EXPECTED=(
+  AcquiaDrupalMinimal
   AcquiaDrupalStrict
-  AcquiaDrupalTransitional
-  AcquiaPHP
+  AcquiaPHPMinimal
+  AcquiaPHPStrict
 )
 for STANDARD in "${EXPECTED[@]}"; do
   ./vendor/bin/phpcs -v --standard="$STANDARD" good.php
