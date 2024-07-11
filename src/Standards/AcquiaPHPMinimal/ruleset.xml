@@ -27,12 +27,14 @@
     <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
   </rule>
 
-  <!-- Apply indentation rules to all kinds of code (i.e., tokens), including comments. -->
+  <!-- Apply indentation rules to comments and arrays. -->
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/2314 -->
+  <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/1235 -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
       <property name="ignoreIndentationTokens" type="array"/>
     </properties>
   </rule>
+  <rule ref="Generic.Arrays.ArrayIndent"/>
 
 </ruleset>
