@@ -48,7 +48,7 @@ jobs:
           - ISOLATED_TEST_ON_NEXT_MINOR_DEV
           # - INTEGRATED_UPGRADE_TEST_TO_NEXT_MINOR_DEV
           - LOOSE_DEPRECATED_CODE_SCAN
-        php-version: [ "8.1", "8.3" ]
+        php-version: [ "8.3" ]
         coveralls-enable: [ "FALSE" ]
         orca-version: [ "^4" ]
         include:
@@ -62,14 +62,22 @@ jobs:
             coveralls-enable: "FALSE"
             orca-version: "^3"
 
-          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-            php-version: "8.3"
-          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-            php-version: "8.3"
-          - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-            php-version: "8.3"
-          - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-            php-version: "8.3"
+          - orca-job: INTEGRATED_TEST_ON_OLDEST_SUPPORTED
+            php-version: "8.1"
+            orca-version: "^4"
+
+          - orca-job: INTEGRATED_TEST_ON_LATEST_LTS
+            php-version: "8.1"
+            orca-version: "^4"
+
+          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+          #   php-version: "8.3"
+          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+          #   php-version: "8.3"
+          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+          #   php-version: "8.3"
+          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+          #   php-version: "8.3"
 
           # - orca-job: ISOLATED_TEST_ON_CURRENT
           #   php-version: "8.0"
