@@ -1,0 +1,17 @@
+name: Auto-merge dependency updates
+on:
+  workflow_run:
+    types:
+      - 'completed'
+    workflows:
+      - 'Tests'
+    branches:
+      - 'dependabot/**'
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  automerge:
+    uses: acquia/.github/.github/workflows/automerge.yml@main
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
