@@ -14,5 +14,4 @@ Import this file on PhpStorm's inspection settings screen to set up default PHP 
   <inspection_tool class="PhpDocSignatureInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
     <option name="ALLOW_MISSING_PARAMETERS" value="true" />
   </inspection_tool>
-  <inspection_tool class="PhpDocMissingThrowsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
 </profile>
