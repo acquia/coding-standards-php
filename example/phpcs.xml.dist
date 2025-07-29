@@ -23,4 +23,10 @@
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/981 -->
   <exclude-pattern>vendor/*</exclude-pattern>
 
+  <!-- The lowest version of PHP supported by both Drupal and Acquia Cloud.
+    @see https://www.drupal.org/docs/8/system-requirements/php-requirements
+    @see https://docs.acquia.com/acquia-cloud/arch/tech-platform/
+    Set PHP version to match your project version -->
+  <config name="testVersion" value="7.4-"/>
+
 </ruleset>
