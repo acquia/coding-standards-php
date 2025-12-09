@@ -78,7 +78,7 @@ jobs:
             orca-job: ""
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-node@v6
         with:
