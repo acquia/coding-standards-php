@@ -86,6 +86,16 @@ There are four permutations of these guidelines, leading to four rulesets to cho
 
 1. Optionally [configure PHP Code Sniffer integration in PhpStorm](https://www.jetbrains.com/help/phpstorm/using-php-code-sniffer.html) or your IDE or code editor of choice. You can import [`example/PhpStormInspections.xml`](example/PhpStormInspections.xml) to set up default integration for new projects. When you open or create a new project for the first time, PhpStorm should automatically detect and set up PHPCS inspections based on these defaults. You will just need to uncheck the “installed standards paths” in the inspection settings for your project so that PhpStorm can find the Acquia Coding Standards.
 
+## Branches and supported release lines
+
+The project currently maintains these long-lived branches:
+
+* `main` for releases in the active `4.x` line.
+* `develop` for ongoing `4.x` development. In Composer, this branch is aliased as `4.x-dev`.
+* `support/3` for long-term support releases in the `3.x` line. In Composer, this branch is aliased as `3.x-dev`.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for pull request targeting guidance and [`RELEASING.md`](RELEASING.md) for maintainer release steps.
+
 ## Contribution
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).

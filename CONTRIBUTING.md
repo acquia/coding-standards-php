@@ -17,3 +17,13 @@ If you find a match you can use the "subscribe" button to get notified on update
 Pull requests are always welcome. Not sure if that typo is worth a pull request? Found a bug and know how to fix it? Do it! We appreciate the help. Any significant improvement should be documented as [a GitHub issue](https://github.com/acquia/coding-standards/issues) before starting working on it.
 
 We are always thrilled to receive pull requests and we do our best to process them quickly and provide feedback.
+
+### Choosing the right branch
+
+Please target pull requests to the branch that matches the release line you are changing:
+
+* Use `develop` for new work targeting the active `4.x` line.
+* Use `support/3` for approved bug fixes, security fixes, or maintenance work targeting the `3.x` long-term support line.
+* Open an issue first if you are unsure which supported line should receive a change.
+
+Project maintainers will handle any required merges, backports, or forward-ports between supported branches.
