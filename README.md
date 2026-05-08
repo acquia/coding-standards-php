@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/acquia/coding-standards/license)](https://packagist.org/packages/acquia/coding-standards)
 [![Tests](https://github.com/acquia/coding-standards-php/actions/workflows/orca.yml/badge.svg)](https://github.com/acquia/coding-standards-php/actions/workflows/orca.yml)
 
-Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
+Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
 
 ## Rules
 
@@ -74,7 +74,7 @@ There are four permutations of these guidelines, leading to four rulesets to cho
 
     The `--extensions` argument must match the chosen code standard. For AcquiaPHP, use `--extensions=php,inc,test,css,txt,md,yml`.
 
-1. Optionally create a [default configuration file](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).
+1. Optionally create a [default configuration file](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Advanced-Usage#using-a-default-configuration-file) for your project so you don't have to provide the command-line arguments every time (i.e., below). Here's a working example: [`example/phpcs.xml.dist`](example/phpcs.xml.dist).
 
     ```bash
     ./vendor/bin/phpcs
