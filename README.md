@@ -14,7 +14,6 @@ Acquia Coding Standards for PHP includes a selection of sniffs from the followin
 
 * [Drupal Code Sniffer](https://packagist.org/packages/drupal/coder) encapsulates [Drupal coding standards](https://www.drupal.org/coding-standards ) and best practices for module development.
 * [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer) itself contains several broadly applicable rulesets.
-* [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) checks for PHP cross-version compatibility with all supported language versions.
 * [Slevomat Coding Standard](https://github.com/slevomat/coding-standard) provides functional (safety and behavior), cleaning (dead code), and formatting (consistent look) sniffs.
 
 ## Rulesets
@@ -39,6 +38,8 @@ There are four permutations of these guidelines, leading to four rulesets to cho
     composer require --dev acquia/coding-standards
     ```
 
+    If you want to add PHP cross-version compatibility checks, we suggest [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility).
+
 1. Inform PHP CodeSniffer of the location of the standard and its dependencies:
 
     * It is strongly recommended that you use a Composer plugin to handle this for you, e.g., [`DealerDirect/phpcodesniffer-composer-installer`](https://github.com/DealerDirect/phpcodesniffer-composer-installer):
@@ -55,7 +56,7 @@ There are four permutations of these guidelines, leading to four rulesets to cho
             "scripts": {
                 "post-install-cmd": "@install-coding-standards",
                 "post-update-cmd" : "@install-coding-standards",
-                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src/Standards,vendor/drupal/coder/coder_sniffer,vendor/phpcompatibility/php-compatibility,vendor/slevomat/coding-standard"
+                "install-coding-standards": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/acquia/coding-standards/src/Standards,vendor/drupal/coder/coder_sniffer,vendor/slevomat/coding-standard"
             }
         }
         ```

@@ -16,17 +16,6 @@
     <exclude-pattern>*.(md|txt|yml)</exclude-pattern>
   </rule>
 
-  <!-- PHP Compatibility sniffs -->
-  <!-- The lowest version of PHP supported by both Drupal and Acquia Cloud.
-    @see https://www.drupal.org/docs/8/system-requirements/php-requirements
-    @see https://docs.acquia.com/acquia-cloud/arch/tech-platform/
-    For instructions on overriding this value in your project,
-    @see https://github.com/acquia/coding-standards-php/pull/37 -->
-  <config name="testVersion" value="7.4-"/>
-  <rule ref="PHPCompatibility">
-    <exclude name="PHPCompatibility.Extensions.RemovedExtensions.famRemoved"/>
-  </rule>
-
   <!-- Apply indentation rules to comments and arrays. -->
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/2314 -->
   <!-- @see https://github.com/squizlabs/PHP_CodeSniffer/issues/1235 -->

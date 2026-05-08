@@ -18,13 +18,13 @@
     ],
     "require": {
         "drupal/coder": "^8.3",
-        "phpcompatibility/php-compatibility": "^10.0.0-alpha1",
         "slevomat/coding-standard": "^8.4",
         "squizlabs/php_codesniffer": "^3.7"
     },
     "suggest": {
         "brainmaestro/composer-git-hooks": "Easily manage Git hooks in your composer config.",
-        "dealerdirect/phpcodesniffer-composer-installer": "Automatically install PHP_CodeSniffer coding standards (rulesets)."
+        "dealerdirect/phpcodesniffer-composer-installer": "Automatically install PHP_CodeSniffer coding standards (rulesets).",
+        "phpcompatibility/php-compatibility": "Check for PHP cross-version compatibility."
     },
     "config": {
         "allow-plugins": {
