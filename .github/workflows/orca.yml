@@ -51,31 +51,31 @@ jobs:
         php-version: [ "8.3" ]
         coveralls-enable: [ "FALSE" ]
         orca-version: [ "^4" ]
-        include:
-          - orca-job: INTEGRATED_TEST_ON_LATEST_EOL_MAJOR
-            php-version: "8.1"
-
-          - orca-job: INTEGRATED_TEST_ON_OLDEST_SUPPORTED
-            php-version: "8.1"
-
-          - orca-job: INTEGRATED_TEST_ON_LATEST_LTS
-            php-version: "8.1"
-
-          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-          #   php-version: "8.3"
-          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
-          #   php-version: "8.3"
-          # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-          #   php-version: "8.3"
-          # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
-          #   php-version: "8.3"
-
-          # - orca-job: ISOLATED_TEST_ON_CURRENT
-          #   php-version: "8.0"
-          #   coveralls-enable: "FALSE"
-          # Custom job
-          - php-version: "8.1"
-            orca-job: ""
+        # include:
+        #   - orca-job: INTEGRATED_TEST_ON_LATEST_EOL_MAJOR
+        #     php-version: "8.1"
+        #
+        #   - orca-job: INTEGRATED_TEST_ON_OLDEST_SUPPORTED
+        #     php-version: "8.1"
+        #
+        #   - orca-job: INTEGRATED_TEST_ON_LATEST_LTS
+        #     php-version: "8.1"
+        #
+        #   # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+        #   #   php-version: "8.3"
+        #   # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_DEV
+        #   #   php-version: "8.3"
+        #   # - orca-job: ISOLATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+        #   #   php-version: "8.3"
+        #   # - orca-job: INTEGRATED_TEST_ON_NEXT_MAJOR_LATEST_MINOR_BETA_OR_LATER
+        #   #   php-version: "8.3"
+        #
+        #   # - orca-job: ISOLATED_TEST_ON_CURRENT
+        #   #   php-version: "8.0"
+        #   #   coveralls-enable: "FALSE"
+        #   # Custom job
+        #   - php-version: "8.1"
+        #     orca-job: ""
 
     steps:
       - uses: actions/checkout@v6
