@@ -8,6 +8,8 @@
 
 Acquia Coding Standards for PHP is a collection of [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer) rules (sniffs) for Acquia coding standards for PHP projects, including Drupal extensions.
 
+> **Notice:** [We have renamed our `master` branch to `main`](https://github.com/acquia/coding-standards-php/issues/98). If you depend on `dev-master`, you'll need to switch to `dev-main` or an actual version like `^3.0`.
+
 ## Rules
 
 Acquia Coding Standards for PHP includes a selection of sniffs from the following rulesets:
