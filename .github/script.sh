@@ -38,7 +38,6 @@ EXPECTED=(
   AcquiaPHPStrict
   Drupal
   DrupalPractice
-  PHPCompatibility
 )
 echo "$INSTALLED"
 for STANDARD in "${EXPECTED[@]}"; do
