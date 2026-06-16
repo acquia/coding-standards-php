@@ -14,9 +14,6 @@ abstract class AbstractRulesetTestCase extends TestCase
 
     private const STANDARDS_DIR = __DIR__ . '/../../src/Standards';
 
-    /**
-     * Asserts that the given fixture file produces zero errors and warnings.
-     */
     protected function assertStandardPasses(string $standard, string $fixture): void
     {
         $file = $this->processFixture($standard, $fixture);
@@ -37,30 +34,6 @@ abstract class AbstractRulesetTestCase extends TestCase
         );
     }
 
-    /**
-     * Asserts that the given fixture file produces at least one violation on the specified line.
-     */
-    protected function assertViolationOnLine(int $line, string $standard, string $fixture): void
-    {
-        $file = $this->processFixture($standard, $fixture);
-        $allErrors = $file->getErrors();
-        $allWarnings = $file->getWarnings();
-
-        $this->assertTrue(
-            isset($allErrors[$line]) || isset($allWarnings[$line]),
-            sprintf(
-                "Expected a violation on line %d of %s under %s but found none.\nAll violations:\n%s",
-                $line,
-                basename($fixture),
-                $standard,
-                $this->describeViolations($file),
-            ),
-        );
-    }
-
-    /**
-     * Asserts that the given fixture file produces a violation with the given sniff code.
-     */
     protected function assertViolationWithCode(string $sniffCode, string $standard, string $fixture): void
     {
         $file = $this->processFixture($standard, $fixture);

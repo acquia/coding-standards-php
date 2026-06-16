@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Acquia\CodingStandards\Tests\Standards;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+
 final class AcquiaPHPStrictTest extends AbstractRulesetTestCase
 {
 
@@ -16,125 +18,73 @@ final class AcquiaPHPStrictTest extends AbstractRulesetTestCase
         $this->assertStandardPasses(self::STANDARD, self::FIXTURES . '/pass.php');
     }
 
-    public function testMissingDeclareStrictTypesIsReported(): void
+    public static function violationCases(): iterable
     {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing',
-            self::STANDARD,
-            self::FIXTURES . '/fail-declare-strict-types.php',
-        );
+        return [
+            // Four cases cover the full custom DeclareStrictTypes config.
+            'declare(strict_types=1) missing entirely' => [
+                'fail-declare-strict-types.php',
+                'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.DeclareStrictTypesMissing',
+            ],
+            // spacesCountAroundEqualsSign=0 overrides Slevomat default to avoid PSR-12 conflict.
+            'declare with spaces around equals' => [
+                'fail-declare-strict-types-spaces.php',
+                'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectStrictTypesFormat',
+            ],
+            'declare without blank line before (linesCountBeforeDeclare=1 config)' => [
+                'fail-declare-strict-types-no-line-before.php',
+                'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceBeforeDeclare',
+            ],
+            'declare without blank line after (linesCountAfterDeclare=1 config)' => [
+                'fail-declare-strict-types-no-line-after.php',
+                'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceAfterDeclare',
+            ],
+
+            'superglobal variable' => [
+                'fail-superglobal.php',
+                'SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable',
+            ],
+            'unsorted use statements' => [
+                'fail-unsorted-uses.php',
+                'SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses.IncorrectlyOrderedUses',
+            ],
+
+            // Regression: rule was omitted from the v3 rewrite, re-added in PR #74.
+            'unused use statement' => [
+                'fail-unused-use.php',
+                'Drupal.Classes.UnusedUseStatement.UnusedUse',
+            ],
+
+            // Regression: deprecated comma-separated array property syntax silently
+            // broke both rules until fixed in PR #84.
+            'forbidden @author annotation' => [
+                'fail-forbidden-annotation.php',
+                'SlevomatCodingStandard.Commenting.ForbiddenAnnotations.AnnotationForbidden',
+            ],
+            '"Class X." forbidden comment pattern' => [
+                'fail-forbidden-comment.php',
+                'SlevomatCodingStandard.Commenting.ForbiddenComments.CommentForbidden',
+            ],
+
+            'property without type hint' => [
+                'fail-missing-type-hints.php',
+                'SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint',
+            ],
+            'parameter without type hint' => [
+                'fail-missing-type-hints.php',
+                'SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint',
+            ],
+            'return without type hint' => [
+                'fail-missing-type-hints.php',
+                'SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint',
+            ],
+        ];
     }
 
-    // Validates the custom spacesCountAroundEqualsSign=0 configuration, which
-    // overrides Slevomat's default to avoid conflict with PSR-12 spacing rules.
-    public function testDeclareStrictTypesWithSpacesIsReported(): void
+    #[DataProvider('violationCases')]
+    public function testViolationIsReported(string $fixture, string $sniffCode): void
     {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectStrictTypesFormat',
-            self::STANDARD,
-            self::FIXTURES . '/fail-declare-strict-types-spaces.php',
-        );
-    }
-
-    public function testSuperglobalUsageIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable',
-            self::STANDARD,
-            self::FIXTURES . '/fail-superglobal.php',
-        );
-    }
-
-    public function testUnsortedUseStatementsAreReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses.IncorrectlyOrderedUses',
-            self::STANDARD,
-            self::FIXTURES . '/fail-unsorted-uses.php',
-        );
-    }
-
-    // Regression: UnusedUseStatement was omitted from the v3 ruleset and
-    // re-added in PR #74 after being discovered missing.
-    public function testUnusedUseStatementIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'Drupal.Classes.UnusedUseStatement.UnusedUse',
-            self::STANDARD,
-            self::FIXTURES . '/fail-unused-use.php',
-        );
-    }
-
-    // Regression: ForbiddenAnnotations used deprecated comma-separated array
-    // syntax (issue #83 / PR #84), which silently broke the rule. This test
-    // validates the <element> syntax fix actually fires the rule.
-    public function testForbiddenAnnotationIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.Commenting.ForbiddenAnnotations.AnnotationForbidden',
-            self::STANDARD,
-            self::FIXTURES . '/fail-forbidden-annotation.php',
-        );
-    }
-
-    // Regression: ForbiddenComments had the same deprecated array syntax issue
-    // as ForbiddenAnnotations (issue #83 / PR #84).
-    public function testForbiddenCommentPatternIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.Commenting.ForbiddenComments.CommentForbidden',
-            self::STANDARD,
-            self::FIXTURES . '/fail-forbidden-comment.php',
-        );
-    }
-
-    // Validates the custom linesCountBeforeDeclare=1 property. If this config
-    // were removed, declare directly after <?php would be silently accepted.
-    public function testDeclareStrictTypesWithNoLineBeforeIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceBeforeDeclare',
-            self::STANDARD,
-            self::FIXTURES . '/fail-declare-strict-types-no-line-before.php',
-        );
-    }
-
-    // Validates the custom linesCountAfterDeclare=1 property. If this config
-    // were removed, namespace immediately after declare would be silently accepted.
-    public function testDeclareStrictTypesWithNoLineAfterIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceAfterDeclare',
-            self::STANDARD,
-            self::FIXTURES . '/fail-declare-strict-types-no-line-after.php',
-        );
-    }
-
-    public function testMissingPropertyTypeHintIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint',
-            self::STANDARD,
-            self::FIXTURES . '/fail-missing-type-hints.php',
-        );
-    }
-
-    public function testMissingParameterTypeHintIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint',
-            self::STANDARD,
-            self::FIXTURES . '/fail-missing-type-hints.php',
-        );
-    }
-
-    public function testMissingReturnTypeHintIsReported(): void
-    {
-        $this->assertViolationWithCode(
-            'SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint',
-            self::STANDARD,
-            self::FIXTURES . '/fail-missing-type-hints.php',
-        );
+        $this->assertViolationWithCode($sniffCode, self::STANDARD, self::FIXTURES . '/' . $fixture);
     }
 
 }
