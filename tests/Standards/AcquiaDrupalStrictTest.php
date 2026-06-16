@@ -16,4 +16,14 @@ final class AcquiaDrupalStrictTest extends AbstractRulesetTestCase
         $this->assertStandardPasses(self::STANDARD, self::FIXTURES . '/pass.php');
     }
 
+    // Validates that the DrupalPractice ruleset is wired up (not just AcquiaDrupalMinimal).
+    public function testExceptionTranslationIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'DrupalPractice.General.ExceptionT.ExceptionT',
+            self::STANDARD,
+            self::FIXTURES . '/fail-exception-translation.php',
+        );
+    }
+
 }

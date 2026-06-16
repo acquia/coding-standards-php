@@ -88,4 +88,53 @@ final class AcquiaPHPStrictTest extends AbstractRulesetTestCase
         );
     }
 
+    // Validates the custom linesCountBeforeDeclare=1 property. If this config
+    // were removed, declare directly after <?php would be silently accepted.
+    public function testDeclareStrictTypesWithNoLineBeforeIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceBeforeDeclare',
+            self::STANDARD,
+            self::FIXTURES . '/fail-declare-strict-types-no-line-before.php',
+        );
+    }
+
+    // Validates the custom linesCountAfterDeclare=1 property. If this config
+    // were removed, namespace immediately after declare would be silently accepted.
+    public function testDeclareStrictTypesWithNoLineAfterIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectWhitespaceAfterDeclare',
+            self::STANDARD,
+            self::FIXTURES . '/fail-declare-strict-types-no-line-after.php',
+        );
+    }
+
+    public function testMissingPropertyTypeHintIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint',
+            self::STANDARD,
+            self::FIXTURES . '/fail-missing-type-hints.php',
+        );
+    }
+
+    public function testMissingParameterTypeHintIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint',
+            self::STANDARD,
+            self::FIXTURES . '/fail-missing-type-hints.php',
+        );
+    }
+
+    public function testMissingReturnTypeHintIsReported(): void
+    {
+        $this->assertViolationWithCode(
+            'SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint',
+            self::STANDARD,
+            self::FIXTURES . '/fail-missing-type-hints.php',
+        );
+    }
+
 }
